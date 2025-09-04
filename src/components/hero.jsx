@@ -30,11 +30,13 @@ function Hero() {
       {/* Typing text — always vertically and horizontally centered */}
       <div
         style={{
-          position: entered ? "absolute" : "absolute",
+          position: "absolute",
           top: entered ? "6rem" : "50%",
-          left: entered ? "9rem" : "50%",
+          left: entered ? "clamp(1.5rem, 5vw, 9rem)" : "50%",
           transform: entered ? "none" : "translate(-50%, -50%)",
-          fontSize: entered ? "2rem" : "2.5rem",
+          fontSize: entered
+            ? "clamp(1.5rem, 4vw, 2.5rem)"
+            : "clamp(2rem, 6vw, 3rem)",
           fontWeight: "bold",
           textAlign: "left",
           transition: "all 0.8s ease",
@@ -61,7 +63,7 @@ function Hero() {
           onClick={() => setEntered(true)}
           style={{
             position: "absolute",
-            top: "60%",
+            top: "55%",
 
             left: "50%",
             transform: "translateX(-50%)",
@@ -87,7 +89,7 @@ function Hero() {
           style={{
             position: "absolute",
             top: "9rem",
-            left: "9rem",
+            left: "clamp(1.5rem, 5vw, 9rem)",
             maxWidth: "min(90vw, 500px)",
             textAlign: "left",
             zIndex: 1,
@@ -105,7 +107,7 @@ function Hero() {
             style={{
               marginTop: "2rem",
               padding: "0.5rem 1.2rem",
-              fontSize: "1rem",
+              fontSize: "clamp(0.9rem, 2vw, 1rem)",
               backgroundColor: "transparent",
               color: "#fff",
               border: "1px solid #fff",
