@@ -1,25 +1,36 @@
+// src/components/Hero.jsx
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
-function Hero() {
+function Hero({ onEnter }) {
   const [entered, setEntered] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowButton(true);
-    }, 3000); // Show button after 3 seconds
+    }, 3000);
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = entered ? "auto" : "hidden";
+    return () => (document.body.style.overflow = "auto");
+  }, [entered]);
+
+  const handleEnter = () => {
+    setEntered(true);
+    if (onEnter) onEnter();
+  };
 
   return (
     <section
       style={{
-        position: "fixed", // changed from relative
+        position: "relative",
         top: 0,
         left: 0,
         width: "100vw",
-        height: "100vh",
+        height: entered ? "50vh" : "100vh",
         overflow: "hidden",
         backgroundColor: "#000",
         color: "#fff",
@@ -27,15 +38,14 @@ function Hero() {
         zIndex: 1,
       }}
     >
-      {/* Typing text — always vertically and horizontally centered */}
       <div
         style={{
           position: "absolute",
-          top: entered ? "6rem" : "50%",
+          top: entered ? "7rem" : "50%",
           left: entered ? "clamp(1.5rem, 5vw, 9rem)" : "50%",
           transform: entered ? "none" : "translate(-50%, -50%)",
           fontSize: entered
-            ? "clamp(1.5rem, 4vw, 2.5rem)"
+            ? "clamp(2rem, 4vw, 2.5rem)"
             : "clamp(2rem, 6vw, 3rem)",
           fontWeight: "bold",
           textAlign: "left",
@@ -57,14 +67,12 @@ function Hero() {
         </span>
       </div>
 
-      {/* Enter button: absolute position, fades in below the centered text */}
       {!entered && showButton && (
         <button
-          onClick={() => setEntered(true)}
+          onClick={handleEnter}
           style={{
             position: "absolute",
             top: "55%",
-
             left: "50%",
             transform: "translateX(-50%)",
             padding: "0.8rem 1.5rem",
@@ -83,18 +91,17 @@ function Hero() {
         </button>
       )}
 
-      {/* About content appears after entering */}
       {entered && (
         <div
           style={{
             position: "absolute",
-            top: "9rem",
+            top: "11rem",
             left: "clamp(1.5rem, 5vw, 9rem)",
             maxWidth: "min(90vw, 500px)",
             textAlign: "left",
             zIndex: 1,
             color: "#ccc",
-            fontSize: "1.2rem",
+            fontSize: "1.6rem",
           }}
         >
           <p>
