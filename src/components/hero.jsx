@@ -15,13 +15,16 @@ function Hero() {
   return (
     <section
       style={{
-        backgroundColor: "#000",
-        color: "#fff",
+        position: "fixed", // changed from relative
+        top: 0,
+        left: 0,
         width: "100vw",
         height: "100vh",
-        position: "relative",
         overflow: "hidden",
+        backgroundColor: "#000",
+        color: "#fff",
         padding: "2rem",
+        zIndex: 1,
       }}
     >
       {/* Typing text — always vertically and horizontally centered */}
@@ -58,7 +61,8 @@ function Hero() {
           onClick={() => setEntered(true)}
           style={{
             position: "absolute",
-            top: "calc(50% + 4rem)",
+            top: "60%",
+
             left: "50%",
             transform: "translateX(-50%)",
             padding: "0.8rem 1.5rem",
