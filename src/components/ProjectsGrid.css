@@ -16,9 +16,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
+  overflow: hidden; /* Prevents media overflow */
   border-radius: 8px;
+  position: relative;
+}
+
+.grid-item img,
+.grid-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This CROPS the image to fill container */
+  object-position: center;
+  display: block;
 }
 
 .projects-grid2 {
@@ -30,4 +39,18 @@
   gap: 0.5rem;
   margin: 0;
   padding: 0;
+}
+
+/* ProjectsGrid.css */
+.grid-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.grid-label {
+  color: white;
+  font-weight: bold;
+  z-index: 2;
 }
