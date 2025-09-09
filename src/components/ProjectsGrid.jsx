@@ -19,7 +19,7 @@ const gridItems = [
   {
     id: "A3",
     label: "A3",
-    media: "public/media/snake.jpg",
+    media: "/media/snake.jpg",
     type: "image",
   },
   {
