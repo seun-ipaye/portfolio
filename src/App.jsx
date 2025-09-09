@@ -1,6 +1,7 @@
 import Hero from "./components/hero";
 import ProjectsGrid from "./components/ProjectsGrid";
 import ExperienceCarousel from "./components/ExperienceCarousel";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Hero />
       <ProjectsGrid />
       <ExperienceCarousel />
+      <Contact></Contact>
     </>
   );
 }
