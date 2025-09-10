@@ -1,152 +1,48 @@
-// src/components/ProjectsGrid.jsx
 import React from "react";
-import useIsMobile from "../hooks/useIsMobile";
 import "./ProjectsGrid.css";
+import useIsMobile from "../hooks/useIsMobile"; // adjust path if needed
 
 const gridItems = [
+  // === Regular grid items ===
+  { id: "A1", label: "SOC", media: "/media/soclogo.gif", type: "gif" },
+  { id: "A2", label: "cool", media: "/media/cs.gif", type: "gif" },
+  { id: "A5", label: "W", media: "/media/w.jpg", type: "image" },
+  { id: "B5", label: "B5", media: "/media/b5.png", type: "image" },
+  { id: "C3", label: "SPO", media: "/media/spotify.jpg", type: "image" },
+  { id: "C6", label: "V", media: "/media/v.mp4", type: "video" },
+
+  // === Grouped items ===
   {
-    id: "A1",
-    label: "CS",
-    media: "/media/cs.gif",
-    type: "gif",
-  },
-  {
-    id: "A2",
-    label: "CS",
-    media: "/media/cs.gif",
-    type: "gif",
-  },
-  {
-    id: "A3",
-    label: "A3",
-    media: "/media/snake.jpg",
+    id: "Group1",
+    label: "Coming Soon",
+    media: "/media/darkmap.png",
     type: "image",
+    className: "group1",
+    href: "#",
   },
   {
-    id: "A4",
-    label: "W",
-    media: "/media/w.jpg",
+    id: "Group2",
+    label: "Spotify Project",
+    media: "/media/spotifylogo2.JPG",
     type: "image",
+    className: "group2",
+    href: "#",
   },
   {
-    id: "A5",
-    label: "W",
-    media: "/media/w.jpg",
+    id: "Group3",
+    label: "Small Cool Thing",
+    media: "/media/group3.jpg",
     type: "image",
+    className: "group3",
+    href: "#",
   },
   {
-    id: "A6",
-    label: "V",
-    media: "/media/v.mp4",
-    type: "video",
-  },
-  {
-    id: "B1",
-    label: "CS",
-    media: "/media/cs.gif",
-    type: "gif",
-  },
-  {
-    id: "B2",
-    label: "CS",
-    media: "/media/cs.gif",
-    type: "gif",
-  },
-  {
-    id: "B3",
-    label: "SPO",
-    media: "/media/spotify.jpg",
+    id: "Group4",
+    label: "Intellicross",
+    media: "/media/group4.jpg",
     type: "image",
-  },
-  {
-    id: "B4",
-    label: "SPO",
-    media: "/media/spotify.jpg",
-    type: "image",
-  },
-  {
-    id: "B5",
-    label: "B5",
-    media: "/media/b5.png",
-    type: "image",
-  },
-  {
-    id: "B6",
-    label: "V",
-    media: "/media/v.mp4",
-    type: "video",
-  },
-  {
-    id: "C1",
-    label: "C1",
-    media: "/media/c1.png",
-    type: "image",
-  },
-  {
-    id: "C2",
-    label: "C2",
-    media: "/media/c2.png",
-    type: "image",
-  },
-  {
-    id: "C3",
-    label: "SPO",
-    media: "/media/spotify.jpg",
-    type: "image",
-  },
-  {
-    id: "C4",
-    label: "SPO",
-    media: "/media/spotify.jpg",
-    type: "image",
-  },
-  {
-    id: "C5",
-    label: "X",
-    media: "/media/x.jpg",
-    type: "image",
-  },
-  {
-    id: "C6",
-    label: "V",
-    media: "/media/v.mp4",
-    type: "video",
-  },
-  {
-    id: "D1",
-    label: "H",
-    media: "/media/h.jpg",
-    type: "image",
-  },
-  {
-    id: "D2",
-    label: "H",
-    media: "/media/h.jpg",
-    type: "image",
-  },
-  {
-    id: "D3",
-    label: "D3",
-    media: "/media/d3.png",
-    type: "image",
-  },
-  {
-    id: "D4",
-    label: "D4",
-    media: "/media/d4.png",
-    type: "image",
-  },
-  {
-    id: "D5",
-    label: "X",
-    media: "/media/x.jpg",
-    type: "image",
-  },
-  {
-    id: "D6",
-    label: "V",
-    media: "/media/v.mp4",
-    type: "video",
+    className: "group4",
+    href: "#",
   },
 ];
 
@@ -156,24 +52,44 @@ function ProjectsGrid() {
 
   return (
     <section className={gridClass}>
-      {gridItems.map(({ id, label, media, type }) => (
-        <div key={id} className={`grid-item grid-${id.toLowerCase()}`}>
-          {type === "image" || type === "gif" ? (
-            <img src={media} alt={label} className="grid-media" />
-          ) : type === "video" ? (
-            <video
-              src={media}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="grid-media"
-            />
-          ) : (
-            <span className="grid-label">{label}</span>
-          )}
-        </div>
-      ))}
+      {gridItems.map(({ id, label, media, type, className, href }) => {
+        const content = (
+          <div className="grid-content">
+            {type === "image" || type === "gif" ? (
+              <img src={media} alt={label} className="grid-media" />
+            ) : type === "video" ? (
+              <video
+                src={media}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="grid-media"
+              />
+            ) : null}
+
+            <div className="grid-overlay">
+              <span className="grid-overlay-text">{label}</span>
+            </div>
+          </div>
+        );
+
+        const Wrapper = href ? "a" : "div";
+
+        return (
+          <Wrapper
+            key={id}
+            className={`grid-item ${
+              className ? `grid-${className}` : `grid-${id.toLowerCase()}`
+            }`}
+            {...(href
+              ? { href, target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
+            {content}
+          </Wrapper>
+        );
+      })}
     </section>
   );
 }
