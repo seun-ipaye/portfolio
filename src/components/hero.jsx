@@ -1,4 +1,4 @@
-// src/components/Hero.jsx
+// src/components/Hero.jsx new
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
