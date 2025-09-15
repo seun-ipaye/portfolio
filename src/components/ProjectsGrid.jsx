@@ -2,10 +2,9 @@
 import React from "react";
 import "./ProjectsGrid.css";
 import { Link } from "react-router-dom";
-import useIsMobile from "../hooks/useIsMobile"; // adjust path if needed
+import useIsMobile from "../hooks/useIsMobile";
 
 const gridItems = [
-  // === Regular grid items ===
   {
     id: "A1",
     label: "SOC",
@@ -20,7 +19,6 @@ const gridItems = [
   { id: "C3", label: "SPO", media: "/media/binarygif.gif", type: "gif" },
   { id: "C6", label: "V", media: "/media/v.mp4", type: "video" },
 
-  // === Grouped items (hoverable or not) ===
   {
     id: "Group1",
     label: "Concept",
@@ -35,7 +33,7 @@ const gridItems = [
     media: "/media/spotifylogo2.JPG",
     type: "image",
     className: "group2",
-    href: "/spotify", // internal route
+    href: "/spotify",
     hoverable: true,
   },
   {
@@ -52,7 +50,7 @@ const gridItems = [
     media: "/media/IntelliCrosslogo.JPG",
     type: "image",
     className: "group4",
-    href: "intellicross",
+    href: "/intellicross",
     hoverable: true,
   },
 ];
@@ -65,7 +63,7 @@ function ProjectsGrid() {
     <section className={gridClass}>
       {gridItems.map(
         ({ id, label, media, type, className, href, hoverable }) => {
-          const isHoverable = hoverable; // Add more conditions if needed
+          const isInternal = href?.startsWith("/");
 
           const content = (
             <div className="grid-content">
@@ -82,7 +80,7 @@ function ProjectsGrid() {
                 />
               ) : null}
 
-              {isHoverable && (
+              {hoverable && (
                 <div className="grid-overlay">
                   <span className="grid-overlay-text">{label}</span>
                 </div>
@@ -90,20 +88,36 @@ function ProjectsGrid() {
             </div>
           );
 
-          const Wrapper = href ? "a" : "div";
+          const wrapperClass = `grid-item ${
+            className ? `grid-${className}` : `grid-${id.toLowerCase()}`
+          } ${hoverable ? "hoverable" : ""}`;
+
+          if (isInternal) {
+            return (
+              <Link key={id} to={href} className={wrapperClass}>
+                {content}
+              </Link>
+            );
+          }
+
+          if (href) {
+            return (
+              <a
+                key={id}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={wrapperClass}
+              >
+                {content}
+              </a>
+            );
+          }
 
           return (
-            <Wrapper
-              key={id}
-              className={`grid-item ${
-                className ? `grid-${className}` : `grid-${id.toLowerCase()}`
-              } ${isHoverable ? "hoverable" : ""}`}
-              {...(href
-                ? { href, target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
+            <div key={id} className={wrapperClass}>
               {content}
-            </Wrapper>
+            </div>
           );
         }
       )}
