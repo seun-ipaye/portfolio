@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import Hero from "./components/Hero";
+import Hero from "./components/hero";
 import ProjectsGrid from "./components/ProjectsGrid";
 import ExperienceCarousel from "./components/ExperienceCarousel";
 import Contact from "./components/Contact";
