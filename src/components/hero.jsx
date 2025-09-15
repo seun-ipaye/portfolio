@@ -1,4 +1,3 @@
-// src/components/Hero.jsx new
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -20,6 +19,7 @@ function Hero({ onEnter }) {
 
   const handleEnter = () => {
     setEntered(true);
+    sessionStorage.setItem("hasEntered", "true");
     if (onEnter) onEnter();
   };
 
@@ -109,7 +109,7 @@ function Hero({ onEnter }) {
             experiences, and ideas that live on the web. Welcome to my corner of
             the internet.
           </p>
-          <button
+          {/* <button
             onClick={() => alert("We'll hook this up to your email soon!")}
             style={{
               marginTop: "2rem",
@@ -135,7 +135,7 @@ function Hero({ onEnter }) {
             }}
           >
             <span style={{ fontSize: "1.2rem" }}>→</span> say hi
-          </button>
+          </button> */}
         </div>
       )}
     </section>
