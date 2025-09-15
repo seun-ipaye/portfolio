@@ -1,6 +1,7 @@
 // src/components/ProjectsGrid.jsx
 import React from "react";
 import "./ProjectsGrid.css";
+import { Link } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile"; // adjust path if needed
 
 const gridItems = [
@@ -10,6 +11,7 @@ const gridItems = [
     label: "SOC",
     media: "/media/soclogo.gif",
     type: "gif",
+    href: "/soc",
     hoverable: true,
   },
   { id: "A2", label: "cool", media: "/media/binarygif.gif", type: "gif" },
@@ -18,14 +20,13 @@ const gridItems = [
   { id: "C3", label: "SPO", media: "/media/binarygif.gif", type: "gif" },
   { id: "C6", label: "V", media: "/media/v.mp4", type: "video" },
 
-  // === Grouped items (hoverable) ===
+  // === Grouped items (hoverable or not) ===
   {
     id: "Group1",
-    label: "Coming Soon",
+    label: "Concept",
     media: "/media/darkmap.png",
     type: "image",
     className: "group1",
-    href: "#",
     hoverable: true,
   },
   {
@@ -34,7 +35,7 @@ const gridItems = [
     media: "/media/spotifylogo2.JPG",
     type: "image",
     className: "group2",
-    href: "#",
+    href: "/spotify", // internal route
     hoverable: true,
   },
   {
@@ -43,7 +44,6 @@ const gridItems = [
     media: "/media/snake.jpg",
     type: "image",
     className: "group3",
-    href: "#",
     hoverable: false,
   },
   {
@@ -52,7 +52,7 @@ const gridItems = [
     media: "/media/IntelliCrosslogo.JPG",
     type: "image",
     className: "group4",
-    href: "#",
+    href: "intellicross",
     hoverable: true,
   },
 ];
