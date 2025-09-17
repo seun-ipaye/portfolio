@@ -1,4 +1,6 @@
+// src/components/ExperienceCarousel.jsx
 import React, { useState } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 import "./ExperienceCarousel.css";
 
 const experiences = [
@@ -6,9 +8,9 @@ const experiences = [
     id: 1,
     company: "Greenshield Canada",
     logo: "/media/greenshield.png",
-    role: "Software Intern",
+    role: "Data Entry Student",
     date: "May 2024 – Aug 2024",
-    description: "Worked on claims processing systems.",
+    description: "Created new hire manual and entered 70+ providers daily",
   },
   {
     id: 2,
@@ -16,11 +18,11 @@ const experiences = [
     logo: "/media/uwinlogo2.png",
     role: "CS Teaching Assistant",
     date: "Jan 2025 – Present",
-    description: "Helped students with logic & recursion.",
+    description: "Helped students with Data Structures and Algorithms",
   },
   {
     id: 3,
-    company: "Self-employed",
+    company: "Tutorax",
     logo: "/media/tutoraxlogo.png",
     role: "Math Tutor",
     date: "2022 – Present",
@@ -30,22 +32,23 @@ const experiences = [
     id: 4,
     company: "Base: Intelligent Communities",
     logo: "/media/baselogo3.png",
-    role: "Community Assistant",
-    date: "Oct 2024 – Apr 2025",
-    description: "Helped coordinate events and outreach.",
+    role: "Full Stack Developer",
+    date: "Sep 2023 – Sep 2024",
+    description: "Maintained app and implemented multilingual functionality",
   },
   {
     id: 5,
     company: "Outlier AI",
     logo: "/media/outlierlogo.png",
     role: "AI Prompt Engineer",
-    date: "May 2025 – Present",
+    date: "Nov 2024 – Present",
     description: "Trained LLMs and optimized outputs.",
   },
 ];
 
 function ExperienceCarousel() {
-  const [centerIndex, setCenterIndex] = useState(2); // Box 3 starts in center
+  const isMobile = useIsMobile();
+  const [centerIndex, setCenterIndex] = useState(2);
 
   const handleLeft = () => {
     setCenterIndex(
@@ -56,6 +59,25 @@ function ExperienceCarousel() {
   const handleRight = () => {
     setCenterIndex((prev) => (prev + 1) % experiences.length);
   };
+
+  if (isMobile) {
+    return (
+      <section className="experience-section">
+        <h2 className="experience-title">Experiences</h2>
+        <div className="experience-mobile">
+          {experiences.map((exp) => (
+            <div key={exp.id} className="experience-card mobile">
+              <img src={exp.logo} alt={exp.company} className="logo" />
+              <h3>{exp.role}</h3>
+              <p className="company">{exp.company}</p>
+              <p className="date">{exp.date}</p>
+              <p className="description">{exp.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   const getDisplayIndices = () => {
     const total = experiences.length;
@@ -69,7 +91,7 @@ function ExperienceCarousel() {
   };
 
   const displayCards = getDisplayIndices().map((index, i) => {
-    const offset = i - 2; // 0 is center
+    const offset = i - 2;
     const exp = experiences[index];
 
     return (
@@ -92,11 +114,11 @@ function ExperienceCarousel() {
       <h2 className="experience-title">Experiences</h2>
       <div className="experience-container">
         <button className="arrow-button" onClick={handleLeft}>
-          &#8592;
+          ←
         </button>
         {displayCards}
         <button className="arrow-button" onClick={handleRight}>
-          &#8594;
+          →
         </button>
       </div>
     </section>

@@ -109,3 +109,23 @@
   text-align: center;
   padding: 0 0.5rem;
 }
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .experience-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .experience-card.mobile {
+    width: 90%;
+    transform: none;
+    opacity: 1;
+    height: auto;
+    padding: 2rem 1rem;
+    scale: 1;
+  }
+}
