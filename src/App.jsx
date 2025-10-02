@@ -7,11 +7,11 @@ import Contact from "./components/Contact";
 import SpotifyPage from "./components/SpotifyPage";
 import SOCPage from "./components/SOCPage";
 import IntelliCrossPage from "./components/IntelliCrossPage";
+import MESPage from "./components/MESPage";
 
 function App() {
   return (
     <Routes>
-      {/* Homepage route */}
       <Route
         path="/"
         element={
@@ -24,11 +24,10 @@ function App() {
         }
       />
 
-      {/* Spotify project route */}
       <Route path="/spotify" element={<SpotifyPage />} />
-
       <Route path="/soc" element={<SOCPage />} />
       <Route path="/intellicross" element={<IntelliCrossPage />} />
+      <Route path="/mes" element={<MESPage />} />
     </Routes>
   );
 }

@@ -9,7 +9,7 @@ const experiences = [
     company: "Greenshield Canada",
     logo: "/media/greenshield.png",
     role: "Data Entry Student",
-    date: "May 2024 – Aug 2024",
+    date: "May 2025 – Sep 2025",
     description: "Created new hire manual and entered 70+ providers daily",
   },
   {
