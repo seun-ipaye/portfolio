@@ -1,4 +1,5 @@
 import React from "react";
+import BackButton from "./BackButton";
 
 function IntelliCrossPage() {
   const containerStyle = {
@@ -45,6 +46,7 @@ function IntelliCrossPage() {
 
   return (
     <div style={containerStyle}>
+      <BackButton></BackButton>
       <h1 style={headingStyle}>Intelli-Cross – VentureU Boot Camp</h1>
 
       <p style={paragraphStyle}>

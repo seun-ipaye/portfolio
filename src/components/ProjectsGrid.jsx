@@ -22,9 +22,9 @@ const gridItems = [
     href: "/mes",
     hoverable: true,
   },
-  { id: "B5", label: "B5", media: "/media/binarygif.gif", type: "gif" },
-  { id: "C3", label: "SPO", media: "/media/binarygif.gif", type: "gif" },
-  { id: "C6", label: "V", media: "/media/v.mp4", type: "video" },
+  { id: "B5", label: "B5", media: "/media/blueflame.gif", type: "gif" },
+  { id: "C3", label: "SPO", media: "/media/rainbow.gif", type: "gif" },
+  { id: "C6", label: "V", media: "/media/binarygif.gif", type: "gif" },
 
   {
     id: "Group1",

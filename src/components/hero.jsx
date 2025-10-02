@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { useNavigate } from "react-router-dom";
 
-function Hero({ onEnter }) {
-  const [entered, setEntered] = useState(false);
+function Hero() {
+  const [entered, setEntered] = useState(
+    sessionStorage.getItem("hasEntered") === "true"
+  );
   const [showButton, setShowButton] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -20,7 +24,7 @@ function Hero({ onEnter }) {
   const handleEnter = () => {
     setEntered(true);
     sessionStorage.setItem("hasEntered", "true");
-    if (onEnter) onEnter();
+    navigate("/?skipIntro=true");
   };
 
   return (
@@ -109,33 +113,6 @@ function Hero({ onEnter }) {
             experiences, and ideas that live on the web. Welcome to my corner of
             the internet.
           </p>
-          {/* <button
-            onClick={() => alert("We'll hook this up to your email soon!")}
-            style={{
-              marginTop: "2rem",
-              padding: "0.5rem 1.2rem",
-              fontSize: "clamp(0.9rem, 2vw, 1rem)",
-              backgroundColor: "transparent",
-              color: "#fff",
-              border: "1px solid #fff",
-              borderRadius: "9999px",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.color = "#00ff9f";
-              e.target.style.borderColor = "#00ff9f";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.color = "#fff";
-              e.target.style.borderColor = "#fff";
-            }}
-          >
-            <span style={{ fontSize: "1.2rem" }}>→</span> say hi
-          </button> */}
         </div>
       )}
     </section>

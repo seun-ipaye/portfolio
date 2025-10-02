@@ -1,5 +1,6 @@
 // src/components/SOCPage.jsx
 import React from "react";
+import BackButton from "./BackButton";
 
 function SOCPage() {
   const containerStyle = {
@@ -85,6 +86,7 @@ function SOCPage() {
 
   return (
     <div style={containerStyle}>
+      <BackButton></BackButton>
       <h1 style={headingStyle}>Sons of Caesar Clothing Brand</h1>
       <p style={subheadingStyle}>
         Lagos, Nigeria · Co-founder · June 2021 – Present

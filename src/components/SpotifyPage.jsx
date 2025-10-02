@@ -1,5 +1,6 @@
 // src/components/SpotifyPage.jsx
 import React from "react";
+import BackButton from "./BackButton";
 
 function SpotifyPage() {
   const containerStyle = {
@@ -46,6 +47,7 @@ function SpotifyPage() {
 
   return (
     <div style={containerStyle}>
+      <BackButton></BackButton>
       <h1 style={headingStyle}>Spotify Playlist Manager</h1>
 
       <p style={paragraphStyle}>
