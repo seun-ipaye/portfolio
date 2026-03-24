@@ -8,6 +8,7 @@ import SpotifyPage from "./components/SpotifyPage";
 import SOCPage from "./components/SOCPage";
 import MESPage from "./components/MESPage";
 import IntelliCrossPage from "./components/IntelliCrossPage";
+import PlayThisPage from "./components/PlayThisPage";
 
 function MainPage() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path="/soc" element={<SOCPage />} />
       <Route path="/intellicross" element={<IntelliCrossPage />} />
       <Route path="/mes" element={<MESPage />} />
+      <Route path="/playthis" element={<PlayThisPage />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

@@ -6,27 +6,29 @@ import "./ExperienceCarousel.css";
 const experiences = [
   {
     id: 1,
-    company: "Greenshield Canada",
+    company: "Greenshield",
     logo: "/media/greenshield.png",
-    role: "Data Entry Student",
-    date: "May 2025 – Sep 2025",
-    description: "Created new hire manual and entered 70+ providers daily",
+    role: "Software Developer Co-op",
+    date: "Jan 2026 – Present",
+    description:
+      "Enhanced the Provider Connect platform by developing ASP.NET (C#) features.",
   },
   {
     id: 2,
     company: "University of Windsor",
     logo: "/media/uwinlogo2.png",
     role: "CS Teaching Assistant",
-    date: "Jan 2025 – Present",
+    date: "Sep 2025 – Dec 2025",
     description: "Helped students with Data Structures and Algorithms",
   },
   {
     id: 3,
-    company: "Tutorax",
-    logo: "/media/tutoraxlogo.png",
-    role: "Math Tutor",
-    date: "2022 – Present",
-    description: "Tutored algebra, calculus, geometry.",
+    company: "Black Students in Computer Science",
+    logo: "/media/bscshello.png",
+    role: "Co-Founder & Co-President",
+    date: "Oct 2025 – Present",
+    description:
+      "Led a 9-person development team to develop and maintain the BSCS official website.",
   },
   {
     id: 4,
@@ -41,7 +43,7 @@ const experiences = [
     company: "Outlier AI",
     logo: "/media/outlierlogo.png",
     role: "AI Prompt Engineer",
-    date: "Nov 2024 – Present",
+    date: "Nov 2024 – Sep 2025",
     description: "Trained LLMs and optimized outputs.",
   },
 ];
@@ -52,7 +54,7 @@ function ExperienceCarousel() {
 
   const handleLeft = () => {
     setCenterIndex(
-      (prev) => (prev - 1 + experiences.length) % experiences.length
+      (prev) => (prev - 1 + experiences.length) % experiences.length,
     );
   };
 

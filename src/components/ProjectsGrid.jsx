@@ -10,10 +10,14 @@ const gridItems = [
     label: "SOC",
     media: "/media/soclogo.gif",
     type: "gif",
-    href: "/soc",
+  },
+  {
+    id: "A2",
+    label: "Concept",
+    media: "/media/darkmap.png",
+    type: "image",
     hoverable: true,
   },
-  { id: "A2", label: "cool", media: "/media/binarygif.gif", type: "gif" },
   {
     id: "A5",
     label: "MES",
@@ -28,9 +32,10 @@ const gridItems = [
 
   {
     id: "Group1",
-    label: "Concept",
-    media: "/media/darkmap.png",
-    type: "image",
+    label: "PlayThis",
+    media: "/media/playthisgif.gif",
+    type: "gif",
+    href: "/playthis",
     className: "group1",
     hoverable: true,
   },
@@ -126,7 +131,7 @@ function ProjectsGrid() {
               {content}
             </div>
           );
-        }
+        },
       )}
     </section>
   );
