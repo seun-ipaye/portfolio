@@ -1,15 +1,96 @@
 /* src/components/ProjectsGrid.css */
 
+.projects-wrapper {
+  position: relative;
+  width: 90vw;
+  margin: 2rem auto;
+}
+
+.view-toggle {
+  position: absolute;
+  top: -3.25rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #111;
+  border: 1px solid rgba(0, 255, 159, 0.3);
+  border-radius: 8px;
+  color: #00ff9f;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  z-index: 5;
+}
+
+.view-toggle:hover {
+  background: #1a1a1a;
+  box-shadow: 0 0 12px rgba(0, 255, 159, 0.35);
+  transform: scale(1.05);
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #111;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.list-item:not(.not-linked) {
+  cursor: pointer;
+}
+
+.list-item:not(.not-linked):hover {
+  background: #1a1a1a;
+  transform: translateX(4px);
+}
+
+.list-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.list-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.list-label {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.list-description {
+  color: #aaa;
+  font-size: 0.875rem;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 90vw;
+  width: 100%;
   aspect-ratio: 6 / 3;
   gap: 0.5rem;
-  margin: 0 auto;
-  margin: 2rem auto;
-
+  margin: 0;
   padding: 0;
 }
 
@@ -36,11 +117,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(9, 1fr);
-  width: 100vw;
+  width: 100%;
   aspect-ratio: 2 / 9;
   gap: 0.5rem;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .projects-wrapper {
+    width: 100vw;
+    padding: 0 1rem;
+  }
+
+  .view-toggle {
+    left: 1rem;
+  }
+
+  .projects-list {
+    padding: 0 1rem;
+  }
 }
 
 .grid-media {
