@@ -66,7 +66,7 @@ const gridItems = [
   {
     id: "Group1",
     label: "Havoc",
-    media: "public/media/havoc_logo.png",
+    media: "/media/havoc_logo.png",
     type: "image",
     href: "/havoc",
     className: "group1",
@@ -86,7 +86,7 @@ const gridItems = [
   {
     id: "Group3",
     label: "Frogg",
-    media: "public/media/frogg_black_bg_zoomed.png",
+    media: "/media/frogg_black_bg_zoomed.png",
     type: "image",
     className: "group3",
     hoverable: true,
