@@ -7,11 +7,12 @@ import useIsMobile from "../hooks/useIsMobile";
 
 const gridItems = [
   {
-    id: "A1",
+    id: "Group5",
     label: "PlayThis",
     media: "/media/playthisgif.gif",
     type: "gif",
     href: "/playthis",
+    className: "group5",
     hoverable: true,
     description: "App for discovering and sharing what to play next.",
   },
@@ -23,29 +24,22 @@ const gridItems = [
     hoverable: true,
     description: "Toronto run visual",
   },
-  {
-    id: "A5",
-    label: "MES",
-    media: "/media/MESpic.jpg",
-    type: "image",
-    href: "/",
-    hoverable: false,
-    description: "Manufacturing Execution System project.",
-  },
-  {
-    id: "B5",
-    label: "B5",
-    media: "/media/blueflame.gif",
-    type: "gif",
-    description: "Visual accent piece.",
-  },
-  {
-    id: "C3",
-    label: "SPO",
-    media: "/media/rainbow.gif",
-    type: "gif",
-    description: "Visual accent piece.",
-  },
+  // {
+  //   id: "A5",
+  //   label: "MES",
+  //   media: "/media/MESpic.jpg",
+  //   type: "image",
+  //   href: "/",
+  //   hoverable: false,
+  //   description: "Manufacturing Execution System project.",
+  // },
+  // {
+  //   id: "B5",
+  //   label: "B5",
+  //   media: "/media/blueflame.gif",
+  //   type: "gif",
+  //   description: "Visual accent piece.",
+  // },
   {
     id: "C6",
     label: "Spotify Playlist Manager",
@@ -55,13 +49,6 @@ const gridItems = [
     hoverable: true,
     description: "Tool for organizing and managing Spotify playlists.",
   },
-  // {
-  //   id: "C6",
-  //   label: "V",
-  //   media: "/media/binarygif.gif",
-  //   type: "gif",
-  //   description: "Visual accent piece.",
-  // },
 
   {
     id: "Group1",
