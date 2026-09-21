@@ -4,8 +4,6 @@
   padding: 4rem 0.4rem;
   text-align: center;
   color: white;
-  align-items: center;
-  justify-content: center;
 }
 
 .experience-title {
@@ -13,119 +11,89 @@
   margin-bottom: 2rem;
 }
 
-.experience-container {
+.experience-list {
   display: flex;
-  align-items: center; /* ensures cards align to bottom */
-  justify-content: center;
-  gap: 1rem;
-  max-width: 100%;
-  overflow: visible; /* allow cards to grow outside */
-  position: relative;
-  height: 26rem; /* add height for tallest card */
-}
-
-.arrow-button {
-  font-size: 2rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.arrow-button:hover {
-  transform: scale(1.3);
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .experience-card {
-  width: 12vw;
-  height: 20rem;
-  background-color: #111;
-  color: white;
-  border-radius: 12px;
   display: flex;
-  flex-direction: column; /* <— STACK VERTICALLY */
-  align-items: center; /* <— CENTER HORIZONTALLY */
-  justify-content: center; /* <— CENTER VERTICALLY */
-  font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.5s ease;
-  opacity: 0.5;
-  transform: scale(0.85);
-  flex-shrink: 0;
-  text-align: center; /* <— Ensure text inside aligns too */
-  padding: 1rem; /* <— Add padding to avoid cramping */
-  gap: 0.4rem; /* <— Add spacing between elements */
+  align-items: center;
+  gap: 1rem;
+  background: #111;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  transition: background 0.2s ease;
 }
 
-.offset-0 {
-  opacity: 1;
-  transform: scale(1.4);
-  z-index: 2;
-  width: 22vw;
+.experience-card:hover {
+  background: #1a1a1a;
 }
 
-.offset--1 {
-  transform: scale(0.8) translateX(-3rem);
-  opacity: 0.8;
-  z-index: 1;
-}
-
-.offset-1 {
-  transform: scale(0.8) translateX(3rem);
-  opacity: 0.8;
-  z-index: 1;
-}
-
-.offset-2,
-.offset--2 {
-  opacity: 0.5;
-  transform: scale(0.5);
-  z-index: 0;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
+.experience-logo {
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  margin-bottom: 1rem;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
-.company {
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+.experience-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
 }
 
-.date {
+.experience-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.experience-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.experience-text .date {
   font-size: 0.8rem;
   opacity: 0.7;
-  margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
-.description {
+.experience-text .company {
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.experience-text .description {
   font-size: 0.85rem;
   opacity: 0.9;
-  text-align: center;
-  padding: 0 0.5rem;
+  margin: 0;
 }
 
-/* Mobile-specific styles */
 @media screen and (max-width: 768px) {
-  .experience-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    padding: 1rem;
+  .experience-list {
+    padding: 0 0.5rem;
   }
 
-  .experience-card.mobile {
-    width: 90%;
-    transform: none;
-    opacity: 1;
-    height: auto;
-    padding: 2rem 1rem;
-    scale: 1;
+  .experience-card {
+    align-items: flex-start;
+    padding: 0.85rem 1rem;
+  }
+
+  .experience-logo {
+    width: 40px;
+    height: 40px;
   }
 }

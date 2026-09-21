@@ -1,28 +1,36 @@
 // src/components/ExperienceCarousel.jsx
-import React, { useState } from "react";
-import useIsMobile from "../hooks/useIsMobile";
+import React from "react";
 import "./ExperienceCarousel.css";
 
 const experiences = [
   {
     id: 1,
-    company: "Greenshield",
-    logo: "/media/greenshield.png",
-    role: "Software Developer Co-op",
-    date: "Jan 2026 – Present",
+    company: "ColorStack UWindsor",
+    logo: "/media/colorstacklogo.png",
+    role: "President",
+    date: "Aug 2026 – Present",
     description:
-      "Enhanced the Provider Connect platform by developing ASP.NET (C#) features.",
+      "Founded the first ColorStack chapter in Ontario, joining a network of 90+ chapters across North America, connecting Black and Latinx CS students to careers in tech.",
   },
   {
     id: 2,
     company: "University of Windsor",
     logo: "/media/uwinlogo2.png",
-    role: "CS Teaching Assistant",
-    date: "Sep 2025 – Dec 2025",
-    description: "Helped students with Data Structures and Algorithms",
+    role: "CS Teaching Assistant (Computer Architecture)",
+    date: "Sep 2026 – Present",
+    description: "Helped students with comparc",
   },
   {
     id: 3,
+    company: "Greenshield",
+    logo: "/media/greenshield.png",
+    role: "Software Developer Co-op",
+    date: "Jan 2026 – April 2026",
+    description:
+      "Enhanced the Provider Connect platform by developing ASP.NET (C#) features.",
+  },
+  {
+    id: 4,
     company: "Black Students in Computer Science",
     logo: "/media/bscshello.png",
     role: "Co-Founder & Co-President",
@@ -30,98 +38,43 @@ const experiences = [
     description:
       "Led a 9-person development team to develop and maintain the BSCS official website.",
   },
-  {
-    id: 4,
-    company: "Base: Intelligent Communities",
-    logo: "/media/baselogo3.png",
-    role: "Full Stack Developer",
-    date: "Sep 2023 – Sep 2024",
-    description: "Maintained app and implemented multilingual functionality",
-  },
+
   {
     id: 5,
-    company: "Outlier AI",
-    logo: "/media/outlierlogo.png",
-    role: "AI Prompt Engineer",
-    date: "Nov 2024 – Sep 2025",
-    description: "Trained LLMs and optimized outputs.",
+    company: "GreenShield",
+    logo: "/media/greenshield.png",
+    role: "Contact Center Co-op",
+    date: "May 2026 – Aug 2026",
+    description: "calls",
+  },
+  {
+    id: 6,
+    company: "University of Windsor",
+    logo: "/media/uwinlogo2.png",
+    role: "CS Teaching Assistant (Data Structures & Algorithms)",
+    date: "Sep 2025 – Dec 2025",
+    description: "Helped students with Data Structures and Algorithms",
   },
 ];
 
 function ExperienceCarousel() {
-  const isMobile = useIsMobile();
-  const [centerIndex, setCenterIndex] = useState(2);
-
-  const handleLeft = () => {
-    setCenterIndex(
-      (prev) => (prev - 1 + experiences.length) % experiences.length,
-    );
-  };
-
-  const handleRight = () => {
-    setCenterIndex((prev) => (prev + 1) % experiences.length);
-  };
-
-  if (isMobile) {
-    return (
-      <section className="experience-section">
-        <h2 className="experience-title">Experiences</h2>
-        <div className="experience-mobile">
-          {experiences.map((exp) => (
-            <div key={exp.id} className="experience-card mobile">
-              <img src={exp.logo} alt={exp.company} className="logo" />
-              <h3>{exp.role}</h3>
-              <p className="company">{exp.company}</p>
-              <p className="date">{exp.date}</p>
-              <p className="description">{exp.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  const getDisplayIndices = () => {
-    const total = experiences.length;
-    return [
-      (centerIndex - 2 + total) % total,
-      (centerIndex - 1 + total) % total,
-      centerIndex,
-      (centerIndex + 1) % total,
-      (centerIndex + 2) % total,
-    ];
-  };
-
-  const displayCards = getDisplayIndices().map((index, i) => {
-    const offset = i - 2;
-    const exp = experiences[index];
-
-    return (
-      <div key={exp.id} className={`experience-card offset-${offset}`}>
-        <img src={exp.logo} alt={exp.company} className="logo" />
-        {offset === 0 && (
-          <>
-            <h3>{exp.role}</h3>
-            <p className="company">{exp.company}</p>
-            <p className="date">{exp.date}</p>
-            <p className="description">{exp.description}</p>
-          </>
-        )}
-      </div>
-    );
-  });
-
   return (
     <section className="experience-section">
       <h2 className="experience-title">Experiences</h2>
-      <div className="experience-container">
-        <button className="arrow-button" onClick={handleLeft}>
-          ←
-        </button>
-        {displayCards}
-        <button className="arrow-button" onClick={handleRight}>
-          →
-        </button>
+      <div className="experience-list">
+        {experiences.map((exp) => (
+          <div key={exp.id} className="experience-card">
+            <img src={exp.logo} alt={exp.company} className="experience-logo" />
+            <div className="experience-text">
+              <div className="experience-header">
+                <h3>{exp.role}</h3>
+                <span className="date">{exp.date}</span>
+              </div>
+              <p className="company">{exp.company}</p>
+              <p className="description">{exp.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -43,30 +43,27 @@ function WalksafePage() {
   return (
     <div style={containerStyle}>
       <BackButton></BackButton>
-      <h1 style={headingStyle}>WalkSafe App</h1>
+      <h1 style={headingStyle}>Walksafe App</h1>
 
       <p style={paragraphStyle}>
         <strong>TypeScript, React Native, Google Firebase</strong> · August 2026
       </p>
 
       <p style={paragraphStyle}>
-        WalkSafe is the official campus safety app I helped build as
-        Co-Founder of BSCS, letting students locate volunteer escorts in
-        real time instead of relying on a dial-based system.
+        WalkSafe is the official campus safety app I helped build as Co-Founder
+        of BSCS, letting students locate volunteer escorts in real time instead
+        of relying on a dial-based system.
       </p>
 
       <p style={paragraphStyle}>
         I led a developer team of 7 to design, build, and ship the app from
-        concept to production, facilitating 300+ safe escorts and cutting
-        average response time by 65% compared to the previous process.
+        concept to production
       </p>
 
       <ul style={listStyle}>
         <li>Real-time volunteer location tracking</li>
         <li>Built with React Native and TypeScript on a Firebase backend</li>
         <li>Led a 7-person developer team from concept to launch</li>
-        <li>300+ safe escorts facilitated, 300+ downloads</li>
-        <li>65% faster average response time than the prior system</li>
       </ul>
 
       <p style={paragraphStyle}>

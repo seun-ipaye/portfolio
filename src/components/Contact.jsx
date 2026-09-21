@@ -34,7 +34,7 @@ function Contact() {
         </a>
         <span className="dot">•</span>
         <a
-          href="/media/resume.pdf" // or your hosted link
+          href="/media/resume2.pdf" // or your hosted link
           target="_blank"
           rel="noopener noreferrer"
         >

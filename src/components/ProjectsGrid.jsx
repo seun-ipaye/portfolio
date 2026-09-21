@@ -68,7 +68,8 @@ const gridItems = [
     className: "group2",
     href: "/walksafe",
     hoverable: true,
-    description: "Tool for organizing and managing Spotify playlists.",
+    description:
+      "App for UWSA student group 'Walksafe'. Used to notify volunteers about student requesting walks on campus.",
   },
   {
     id: "Group3",
@@ -78,7 +79,8 @@ const gridItems = [
     className: "group3",
     href: "/frogg",
     hoverable: true,
-    description: "A small, fun side experiment.",
+    description:
+      "A Discord bot that send Canadian internships/co-ops every 6 hours",
   },
   {
     id: "Group4",
@@ -88,7 +90,7 @@ const gridItems = [
     className: "group4",
     href: "/intellicross",
     hoverable: true,
-    description: "Intelligent cross-platform project.",
+    description: "Cross-walk optmization pitch",
   },
 ];
 
