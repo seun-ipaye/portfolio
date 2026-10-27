@@ -6,6 +6,11 @@ const TABS = ["about", "experience", "projects", "hobbies"];
 
 const professional = [
   {
+    role: "Full Stack Developer (Founder)",
+    company: "Sons of Caesar",
+    date: "Mar 2026 – Present",
+  },
+  {
     role: "Teaching Assistant (Computer Architecture)",
     company: "University of Windsor",
     date: "Sep 2026 – Present",
@@ -41,6 +46,7 @@ const leadership = [
 ];
 
 const projects = [
+  ["Sons of Caesar", "website for my events group", "https://sonsofcaesar.xyz"],
   [
     "Frogg",
     "Discord bot that posts Canadian internships every 6 hours",
