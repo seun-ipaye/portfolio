@@ -41,3 +41,11 @@ button {
   height: 1px;
   overflow: hidden;
 }
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

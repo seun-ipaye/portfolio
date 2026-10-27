@@ -67,7 +67,7 @@ const projects = [
 ];
 
 const hobbies = [
-  ["design", "Photoshop and visual design", "/design"],
+  //["design", "Photoshop and visual design", "/design"],
   ["manga", "what I've read and my favorites", "/manga"],
   ["hiking", "photos from my hikes", "/hiking"],
 ];
