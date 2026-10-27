@@ -1,5 +1,6 @@
 // src/components/Portfolio.jsx
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Portfolio.css";
 
 const TABS = ["about", "experience", "projects", "hobbies"];
@@ -52,11 +53,7 @@ const projects = [
     "Discord bot that posts Canadian internships every 6 hours",
     "https://github.com/seun-ipaye/frogg",
   ],
-  [
-    "Walksafe",
-    "notifies volunteers when students request a campus walk",
-    "https://github.com/seun-ipaye/walksafe",
-  ],
+  ["Walksafe", "notifies volunteers when students request a campus walk"],
   [
     "PlayThis",
     "discovering and sharing what to play next",
@@ -70,9 +67,9 @@ const projects = [
 ];
 
 const hobbies = [
-  ["design", "Photoshop and visual design"],
-  ["manga", "always in the middle of a series"],
-  ["gaming", "the games I keep coming back to"],
+  ["design", "Photoshop and visual design", "/design"],
+  ["manga", "what I've read and my favorites", "/manga"],
+  ["hiking", "photos from my hikes", "/hiking"],
 ];
 
 const links = [
@@ -98,7 +95,7 @@ function About() {
         <ul>
           <li>building software people actually use</li>
           <li>design and Photoshop</li>
-          <li>manga and gaming</li>
+          <li>manga and hiking</li>
         </ul>
       </div>
       <div className="pf-photo">
@@ -154,7 +151,11 @@ function Pairs({ items }) {
         );
         return (
           <li key={name}>
-            {href ? (
+            {href?.startsWith("/") ? (
+              <Link className="pf-row-link" to={href}>
+                {inner}
+              </Link>
+            ) : href ? (
               <a
                 className="pf-row-link"
                 href={href}
@@ -174,7 +175,8 @@ function Pairs({ items }) {
 }
 
 export default function Portfolio() {
-  const [tab, setTab] = useState("about");
+  const location = useLocation();
+  const [tab, setTab] = useState(location.state?.tab || "about");
 
   return (
     <main className="pf">

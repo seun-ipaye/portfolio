@@ -1,0 +1,117 @@
+/* src/components/HobbyPage.css */
+
+.hb {
+  position: relative;
+  z-index: 1;
+  height: 100dvh;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 2rem;
+  overflow-y: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color: #e8e8e8;
+}
+
+.hb-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  transition: color 0.2s ease;
+}
+
+.hb-back:hover {
+  color: #fff;
+}
+
+.hb h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 2.5rem;
+}
+
+.hb-intro {
+  margin: 0.75rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.hb-dim {
+  color: #7a7a7a;
+}
+
+.hb-empty {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+}
+
+.hb-gallery {
+  columns: 3;
+  column-gap: 1rem;
+}
+
+.hb-gallery figure {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.hb-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hb-gallery figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #7a7a7a;
+}
+
+.hb-section {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #6b6b6b;
+  margin: 1.5rem 0 0.25rem;
+}
+
+.hb-manga {
+  list-style: none;
+  padding: 0;
+}
+
+.hb-manga li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #161616;
+  font-size: 0.95rem;
+}
+
+.hb-manga-title {
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.hb-manga p {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hb {
+    padding: 2rem 1.25rem 1.25rem;
+  }
+
+  .hb h1 {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .hb-gallery {
+    columns: 2;
+    column-gap: 0.6rem;
+  }
+
+  .hb-gallery figure {
+    margin-bottom: 0.6rem;
+  }
+}
