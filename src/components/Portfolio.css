@@ -158,6 +158,25 @@ a.pf-row-link:hover .pf-row-main {
   color: #7a7a7a;
 }
 
+.pf-exp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.pf-exp-text {
+  flex: 1;
+}
+
+.pf-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+  font-size: 0.8rem;
+}
+
 .pf-date {
   flex-shrink: 0;
   white-space: nowrap;
@@ -201,17 +220,26 @@ a.pf-row-link:hover .pf-row-main {
   .pf-about {
     flex-direction: column-reverse;
     justify-content: flex-end;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    height: 100%;
+  }
+
+  .pf-about-text {
+    flex: none;
   }
 
   .pf-photo {
+    flex: 1 1 0;
+    min-height: 18vh;
+    max-height: calc((100vw - 2.5rem) * 0.75);
     width: 100%;
   }
 
   .pf-photo img {
-    height: 30vh;
+    height: 100%;
     max-height: none;
     object-fit: cover;
+    object-position: center 35%;
   }
 
   .pf-about-text h1 {
@@ -237,7 +265,12 @@ a.pf-row-link:hover .pf-row-main {
   }
 
   .pf-rows li {
-    padding: 0.85rem 0;
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+  }
+
+  .pf-section-gap {
+    margin-top: 1.25rem;
   }
 }
 
@@ -248,10 +281,6 @@ a.pf-row-link:hover .pf-row-main {
 
   .pf-about {
     gap: 1rem;
-  }
-
-  .pf-photo img {
-    height: 20vh;
   }
 
   .pf-about-text h1 {

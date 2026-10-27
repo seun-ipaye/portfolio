@@ -12,9 +12,12 @@ const professional = [
     date: "Mar 2026 – Present",
   },
   {
-    role: "Teaching Assistant (Computer Architecture)",
+    role: "Teaching Assistant",
     company: "University of Windsor",
-    date: "Sep 2026 – Present",
+    details: [
+      ["Computer Architecture", "Sep 2026 – Present"],
+      ["Data Structures & Algorithms", "Sep 2025 – Dec 2025"],
+    ],
   },
   {
     role: "Contact Center Co-op",
@@ -25,11 +28,6 @@ const professional = [
     role: "Software Developer Co-op",
     company: "GreenShield",
     date: "Jan 2026 – Apr 2026",
-  },
-  {
-    role: "Teaching Assistant (Data Structures & Algorithms)",
-    company: "University of Windsor",
-    date: "Sep 2025 – Dec 2025",
   },
 ];
 
@@ -118,10 +116,18 @@ function ExperienceList({ items }) {
     <ul className="pf-rows">
       {items.map((e) => (
         <li key={e.role + e.company}>
-          <span className="pf-row-main">
-            {e.role} <span className="pf-dim">· {e.company}</span>
-          </span>
-          <span className="pf-dim pf-date">{e.date}</span>
+          <div className="pf-exp-text">
+            <span className="pf-row-main">
+              {e.role} <span className="pf-dim">· {e.company}</span>
+            </span>
+            {e.details?.map(([course, when]) => (
+              <span key={course} className="pf-dim pf-detail">
+                <span>{course}</span>
+                <span>{when}</span>
+              </span>
+            ))}
+          </div>
+          {e.date && <span className="pf-dim pf-date">{e.date}</span>}
         </li>
       ))}
     </ul>
