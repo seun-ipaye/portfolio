@@ -75,7 +75,11 @@ function About() {
       </div>
       <div className="pf-photo">
         {photoOk ? (
-          <img src="/media/me.jpg" alt="Seun" onError={() => setPhotoOk(false)} />
+          <img
+            src="/media/me.JPG"
+            alt="Seun"
+            onError={() => setPhotoOk(false)}
+          />
         ) : (
           <span>photo</span>
         )}
