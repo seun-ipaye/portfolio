@@ -1,6 +1,7 @@
 // src/components/HobbyPage.jsx
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { design, hiking, manga } from "../data/hobbies";
+import { design, hiking, manga, mangaPanels } from "../data/hobbies";
 import "./HobbyPage.css";
 
 const PAGES = {
@@ -16,19 +17,30 @@ const PAGES = {
   },
   manga: {
     title: "manga",
-    intro: "what I've read, and my favorites.",
+    intro: "panels that stuck with me.",
     empty: "list coming soon.",
   },
 };
 
 function Gallery({ items, empty }) {
+  const [wide, setWide] = useState({});
+
   if (!items.length) return <p className="hb-empty">{empty}</p>;
+
+  const onLoad = (src) => (e) => {
+    const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
+    if (w > h * 1.05) setWide((prev) => ({ ...prev, [src]: true }));
+  };
 
   return (
     <div className="hb-gallery">
       {items.map((item) => (
-        <figure key={item.src}>
-          <img src={item.src} alt={item.caption || ""} loading="lazy" />
+        <figure key={item.src} className={wide[item.src] ? "wide" : ""}>
+          <img
+            src={item.src}
+            alt={item.caption || ""}
+            onLoad={onLoad(item.src)}
+          />
           {item.caption && <figcaption>{item.caption}</figcaption>}
         </figure>
       ))}
@@ -36,8 +48,8 @@ function Gallery({ items, empty }) {
   );
 }
 
-function MangaList({ items, empty }) {
-  if (!items.length) return <p className="hb-empty">{empty}</p>;
+function MangaList({ items }) {
+  if (!items.length) return null;
 
   const favorites = items.filter((m) => m.favorite);
   const others = items.filter((m) => !m.favorite);
@@ -85,7 +97,15 @@ export default function HobbyPage({ kind }) {
 
       {kind === "design" && <Gallery items={design} empty={page.empty} />}
       {kind === "hiking" && <Gallery items={hiking} empty={page.empty} />}
-      {kind === "manga" && <MangaList items={manga} empty={page.empty} />}
+      {kind === "manga" && (
+        <>
+          <Gallery
+            items={mangaPanels.map((src) => ({ src }))}
+            empty={page.empty}
+          />
+          <MangaList items={manga} />
+        </>
+      )}
     </main>
   );
 }
