@@ -51,7 +51,7 @@ const links = [
   ["email", "mailto:seuneipaye@gmail.com"],
   ["github", "https://github.com/seun-ipaye"],
   ["linkedin", "https://linkedin.com/in/seunipaye"],
-  ["resume", "/media/resume2.pdf"],
+  ["resume", "/media/devresume.pdf"],
 ];
 
 function About() {
