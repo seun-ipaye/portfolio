@@ -4,41 +4,63 @@ import "./Portfolio.css";
 
 const TABS = ["about", "experience", "projects", "hobbies"];
 
-const experiences = [
+const professional = [
+  {
+    role: "Teaching Assistant (Computer Architecture)",
+    company: "University of Windsor",
+    date: "Sep 2026 – Present",
+  },
+  {
+    role: "Contact Center Co-op",
+    company: "GreenShield",
+    date: "May 2026 – Aug 2026",
+  },
   {
     role: "Software Developer Co-op",
-    company: "Greenshield",
-    date: "Jan 2026 – Present",
+    company: "GreenShield",
+    date: "Jan 2026 – Apr 2026",
+  },
+  {
+    role: "Teaching Assistant (Data Structures & Algorithms)",
+    company: "University of Windsor",
+    date: "Sep 2025 – Dec 2025",
+  },
+];
+
+const leadership = [
+  {
+    role: "President",
+    company: "ColorStack UWindsor",
+    date: "Aug 2026 – Present",
   },
   {
     role: "Co-Founder & Co-President",
     company: "Black Students in Computer Science",
     date: "Oct 2025 – Present",
   },
-  {
-    role: "CS Teaching Assistant",
-    company: "University of Windsor",
-    date: "Sep 2025 – Dec 2025",
-  },
-  {
-    role: "AI Prompt Engineer",
-    company: "Outlier AI",
-    date: "Nov 2024 – Sep 2025",
-  },
-  {
-    role: "Full Stack Developer",
-    company: "Base: Intelligent Communities",
-    date: "Sep 2023 – Sep 2024",
-  },
 ];
 
 const projects = [
-  ["PlayThis", "discovering and sharing what to play next"],
-  ["Walksafe", "notifies volunteers when students request a campus walk"],
-  ["Frogg", "Discord bot that posts Canadian internships every 6 hours"],
-  ["Havoc", "a competitive programming language"],
-  ["Spotify Playlist Manager", "organizing and managing playlists"],
-  ["Intelli-Cross", "crosswalk optimization pitch"],
+  [
+    "Frogg",
+    "Discord bot that posts Canadian internships every 6 hours",
+    "https://github.com/seun-ipaye/frogg",
+  ],
+  [
+    "Walksafe",
+    "notifies volunteers when students request a campus walk",
+    "https://github.com/seun-ipaye/walksafe",
+  ],
+  [
+    "PlayThis",
+    "discovering and sharing what to play next",
+    "https://github.com/seun-ipaye/play-this",
+  ],
+  [
+    "Spotify Playlist Manager",
+    "organizing and managing playlists",
+    "https://github.com/seun-ipaye/SpotifyManager",
+  ],
 ];
 
 const hobbies = [
@@ -88,10 +110,10 @@ function About() {
   );
 }
 
-function Experience() {
+function ExperienceList({ items }) {
   return (
     <ul className="pf-rows">
-      {experiences.map((e) => (
+      {items.map((e) => (
         <li key={e.role + e.company}>
           <span className="pf-row-main">
             {e.role} <span className="pf-dim">· {e.company}</span>
@@ -103,15 +125,44 @@ function Experience() {
   );
 }
 
+function Experience() {
+  return (
+    <>
+      <h2 className="pf-section-title">professional experience</h2>
+      <ExperienceList items={professional} />
+      <h2 className="pf-section-title pf-section-gap">leadership</h2>
+      <ExperienceList items={leadership} />
+    </>
+  );
+}
+
 function Pairs({ items }) {
   return (
     <ul className="pf-rows">
-      {items.map(([name, text]) => (
-        <li key={name}>
-          <span className="pf-row-main">{name}</span>
-          <span className="pf-dim">{text}</span>
-        </li>
-      ))}
+      {items.map(([name, text, href]) => {
+        const inner = (
+          <>
+            <span className="pf-row-main">{name}</span>
+            <span className="pf-dim">{text}</span>
+          </>
+        );
+        return (
+          <li key={name}>
+            {href ? (
+              <a
+                className="pf-row-link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {inner}
+              </a>
+            ) : (
+              <div className="pf-row-link">{inner}</div>
+            )}
+          </li>
+        );
+      })}
     </ul>
   );
 }
