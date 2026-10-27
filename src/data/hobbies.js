@@ -19,14 +19,17 @@ export const hiking = [
 
 export const mangaPanels = [
   "/media/manga/IMG_4969.JPG",
+  "/media/manga/IMG_5283.JPG",
   "/media/manga/IMG_4975.JPG",
   "/media/manga/IMG_5180.JPG",
   "/media/manga/IMG_5249.JPG",
   "/media/manga/IMG_5250.JPG",
+  "/media/manga/IMG_5284.JPG",
   "/media/manga/IMG_5251.JPG",
   "/media/manga/IMG_5253.JPG",
   "/media/manga/IMG_5261.JPG",
   "/media/manga/IMG_5262.JPG",
+  "/media/manga/IMG_5285.JPG",
   "/media/manga/IMG_5267.JPG",
   "/media/manga/IMG_5268.JPG",
   "/media/manga/IMG_5272.JPG",

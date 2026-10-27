@@ -94,7 +94,7 @@ function About() {
         <p>I'm broadly interested in:</p>
         <ul>
           <li>building software people actually use</li>
-          <li>design and Photoshop</li>
+          <li>side quests</li>
           <li>manga and hiking</li>
         </ul>
       </div>

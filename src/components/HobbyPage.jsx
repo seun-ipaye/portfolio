@@ -121,7 +121,7 @@ function Gallery({ items, empty }) {
         {items.map((item, i) => {
           let cls = "";
           if (wide[item.src]) {
-            cls = wideCount % 2 === 0 ? "wide" : "wide wide-right";
+            cls = wideCount % 2 === 0 ? "wide wide-left" : "wide wide-right";
             wideCount += 1;
           }
           return (
