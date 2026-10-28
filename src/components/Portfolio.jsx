@@ -49,14 +49,14 @@ const projects = [
   [
     "Frogg",
     "Discord bot that posts Canadian internships every 6 hours",
-    "https://github.com/seun-ipaye/frogg",
+    "https://top.gg/bot/1538298422807765002",
+  ],
+  [
+    "ascii-waves",
+    "npm library for animated ASCII wave backgrounds",
+    "https://www.npmjs.com/package/ascii-waves",
   ],
   ["Walksafe", "notifies volunteers when students request a campus walk"],
-  [
-    "PlayThis",
-    "discovering and sharing what to play next",
-    "https://github.com/seun-ipaye/play-this",
-  ],
   [
     "Spotify Playlist Manager",
     "organizing and managing playlists",
