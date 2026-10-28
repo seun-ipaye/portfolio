@@ -84,7 +84,7 @@ function About() {
     <div className="pf-about">
       <div className="pf-about-text">
         <h1>Seun Samuel-Ipaye</h1>
-        <p>I'm a software developer co-op at Greenshield.</p>
+        <p>I'm a software developer.</p>
         <p>
           I study Computer Science at the University of Windsor, and I build
           tools, apps, and small things I find useful.
@@ -92,7 +92,7 @@ function About() {
         <p>I'm broadly interested in:</p>
         <ul>
           <li>building software people actually use</li>
-          <li>side quests</li>
+          <li>reverse engineering</li>
           <li>manga and hiking</li>
         </ul>
       </div>
