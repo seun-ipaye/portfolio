@@ -41,6 +41,54 @@
   color: #fff;
 }
 
+.pf-wave {
+  margin-left: auto;
+}
+
+.pf-tabs button:not(.pf-wave),
+.pf-content,
+.pf-footer {
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s,
+    color 0.2s ease;
+}
+
+.pf-play .pf-tabs button:not(.pf-wave),
+.pf-play .pf-content,
+.pf-play .pf-footer {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pf-play .pf-wave {
+  color: #fff;
+}
+
+.pf-credit {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 2rem;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s,
+    color 0.2s ease;
+}
+
+.pf-play .pf-credit {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s, 0.5s, 0s;
+}
+
+.pf-play .pf-credit:hover {
+  color: #fff;
+}
+
 .pf-content {
   flex: 1;
   min-height: 0;
@@ -256,6 +304,11 @@ a.pf-row-link:hover .pf-row-main {
 
   .pf-footer {
     padding-top: 1rem;
+  }
+
+  .pf-credit {
+    left: 1.25rem;
+    bottom: 1.25rem;
   }
 
   .pf-rows li,

@@ -1,5 +1,5 @@
 // src/components/Portfolio.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Portfolio.css";
 
@@ -183,9 +183,17 @@ function Pairs({ items }) {
 export default function Portfolio() {
   const location = useLocation();
   const [tab, setTab] = useState(location.state?.tab || "about");
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    if (!play) return;
+    const onKey = (e) => e.key === "Escape" && setPlay(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [play]);
 
   return (
-    <main className="pf">
+    <main className={play ? "pf pf-play" : "pf"}>
       <nav className="pf-tabs">
         {TABS.map((t) => (
           <button
@@ -196,6 +204,15 @@ export default function Portfolio() {
             {t}
           </button>
         ))}
+        <button
+          className="pf-wave"
+          onClick={() => setPlay((p) => !p)}
+          aria-label={play ? "show the page" : "play with the waves"}
+          aria-pressed={play}
+          title={play ? "show the page (esc)" : "play with the waves"}
+        >
+          ≈
+        </button>
       </nav>
 
       <section className="pf-content" key={tab}>
@@ -204,6 +221,16 @@ export default function Portfolio() {
         {tab === "projects" && <Pairs items={projects} />}
         {tab === "hobbies" && <Pairs items={hobbies} />}
       </section>
+
+      <a
+        className="pf-credit"
+        href="https://www.npmjs.com/package/ascii-waves"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={play ? 0 : -1}
+      >
+        like it? add it to your website
+      </a>
 
       <footer className="pf-footer">
         {links.map(([label, href]) => (
