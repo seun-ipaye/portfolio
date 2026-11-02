@@ -52,6 +52,11 @@ const projects = [
     "https://top.gg/bot/1538298422807765002",
   ],
   [
+    "LeetTest",
+    "Chrome extension for randomized LeetCode practice and timed OA simulation",
+    "https://github.com/seun-ipaye/LeetTest",
+  ],
+  [
     "ascii-waves",
     "npm library for animated ASCII wave backgrounds",
     "https://www.npmjs.com/package/ascii-waves",
