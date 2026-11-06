@@ -17,7 +17,7 @@ const PAGES = {
   },
   manga: {
     title: "manga",
-    intro: "panels that stuck with me.",
+    intro: "my favorite panels",
     empty: "list coming soon.",
   },
 };

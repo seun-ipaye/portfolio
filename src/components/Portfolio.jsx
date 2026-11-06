@@ -9,11 +9,13 @@ const professional = [
   {
     role: "Full Stack Developer (Founder)",
     company: "Sons of Caesar",
+    href: "https://sonsofcaesar.xyz",
     date: "Mar 2026 – Present",
   },
   {
     role: "Teaching Assistant",
     company: "University of Windsor",
+    href: "https://www.uwindsor.ca",
     details: [
       ["Computer Architecture", "Sep 2026 – Present"],
       ["Data Structures & Algorithms", "Sep 2025 – Dec 2025"],
@@ -22,11 +24,13 @@ const professional = [
   {
     role: "Contact Center Co-op",
     company: "GreenShield",
+    href: "https://www.greenshield.ca",
     date: "May 2026 – Aug 2026",
   },
   {
     role: "Software Developer Co-op",
     company: "GreenShield",
+    href: "https://www.greenshield.ca",
     date: "Jan 2026 – Apr 2026",
   },
 ];
@@ -35,11 +39,13 @@ const leadership = [
   {
     role: "President",
     company: "ColorStack UWindsor",
+    href: "https://www.instagram.com/colorstackuwin/",
     date: "Aug 2026 – Present",
   },
   {
     role: "Co-Founder & Co-President",
     company: "Black Students in Computer Science",
+    href: "https://www.instagram.com/uwinbscs/",
     date: "Oct 2025 – Present",
   },
 ];
@@ -52,9 +58,9 @@ const projects = [
     "https://top.gg/bot/1538298422807765002",
   ],
   [
-    "LeetTest",
+    "OAMax",
     "Chrome extension for randomized LeetCode practice and timed OA simulation",
-    "https://github.com/seun-ipaye/LeetTest",
+    "https://chromewebstore.google.com/detail/oamax/ihegbmjjphimjplnekfadnphldihopnd",
   ],
   [
     "ascii-waves",
@@ -71,7 +77,7 @@ const projects = [
 
 const hobbies = [
   //["design", "Photoshop and visual design", "/design"],
-  ["manga", "what I've read and my favorites", "/manga"],
+  ["manga", "my favorite panels", "/manga"],
   ["hiking", "photos from my hikes", "/hiking"],
 ];
 
@@ -123,7 +129,22 @@ function ExperienceList({ items }) {
         <li key={e.role + e.company}>
           <div className="pf-exp-text">
             <span className="pf-row-main">
-              {e.role} <span className="pf-dim">· {e.company}</span>
+              {e.role}{" "}
+              <span className="pf-dim">
+                ·{" "}
+                {e.href ? (
+                  <a
+                    className="pf-company"
+                    href={e.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {e.company}
+                  </a>
+                ) : (
+                  e.company
+                )}
+              </span>
             </span>
             {e.details?.map(([course, when]) => (
               <span key={course} className="pf-dim pf-detail">
@@ -150,9 +171,9 @@ function Experience() {
   );
 }
 
-function Pairs({ items }) {
+function Pairs({ items, underlined }) {
   return (
-    <ul className="pf-rows">
+    <ul className={underlined ? "pf-rows pf-underlined" : "pf-rows"}>
       {items.map(([name, text, href]) => {
         const inner = (
           <>
@@ -223,7 +244,7 @@ export default function Portfolio() {
       <section className="pf-content" key={tab}>
         {tab === "about" && <About />}
         {tab === "experience" && <Experience />}
-        {tab === "projects" && <Pairs items={projects} />}
+        {tab === "projects" && <Pairs items={projects} underlined />}
         {tab === "hobbies" && <Pairs items={hobbies} />}
       </section>
 

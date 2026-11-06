@@ -193,12 +193,23 @@
   width: 100%;
 }
 
-a.pf-row-link:hover .pf-row-main {
+a.pf-row-link:hover .pf-row-main,
+.pf-underlined a.pf-row-link .pf-row-main {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .pf-row-main {
+  color: #fff;
+}
+
+.pf-company {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.pf-company:hover {
   color: #fff;
 }
 
