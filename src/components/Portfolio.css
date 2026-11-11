@@ -134,6 +134,11 @@
   margin-bottom: 0.9rem;
 }
 
+.pf-inline-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .pf-about-text ul {
   list-style: none;
   padding: 0;

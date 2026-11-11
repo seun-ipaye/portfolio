@@ -103,8 +103,12 @@ function About() {
         <p>I'm broadly interested in:</p>
         <ul>
           <li>building software people actually use</li>
-          <li>reverse engineering</li>
-          <li>manga and hiking</li>
+          <li>LLMs and AI tools</li>
+          <li>
+            <Link className="pf-inline-link" to="/open-source">
+              open source contributions
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="pf-photo">
