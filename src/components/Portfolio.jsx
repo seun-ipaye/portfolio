@@ -114,7 +114,7 @@ function About() {
       <div className="pf-photo">
         {photoOk ? (
           <img
-            src="/media/me.JPG"
+            src="/media/me-web.jpg"
             alt="Seun"
             onError={() => setPhotoOk(false)}
           />
