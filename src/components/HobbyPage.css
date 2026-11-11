@@ -68,6 +68,7 @@
   display: block;
   width: 100%;
   padding: 0;
+  background: #0d0d0d;
   cursor: zoom-in;
 }
 
@@ -163,6 +164,12 @@
   width: 100%;
   height: auto;
   display: block;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.hb-gallery img.loaded {
+  opacity: 1;
 }
 
 .hb-gallery figcaption {

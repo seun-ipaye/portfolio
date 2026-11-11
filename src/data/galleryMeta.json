@@ -1,0 +1,142 @@
+{
+  "/media/hiking/hike-1.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-1.jpg",
+    "w": 800,
+    "h": 600
+  },
+  "/media/hiking/hike-2.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-2.jpg",
+    "w": 800,
+    "h": 600
+  },
+  "/media/hiking/hike-3.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-3.jpg",
+    "w": 800,
+    "h": 600
+  },
+  "/media/hiking/hike-4.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-4.jpg",
+    "w": 600,
+    "h": 800
+  },
+  "/media/hiking/hike-5.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-5.jpg",
+    "w": 600,
+    "h": 800
+  },
+  "/media/hiking/hike-6.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-6.jpg",
+    "w": 600,
+    "h": 800
+  },
+  "/media/hiking/hike-7.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-7.jpg",
+    "w": 600,
+    "h": 800
+  },
+  "/media/hiking/hike-8.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-8.jpg",
+    "w": 600,
+    "h": 800
+  },
+  "/media/hiking/hike-9.jpg": {
+    "thumb": "/media/hiking/thumbs/hike-9.jpg",
+    "w": 600,
+    "h": 800
+  },
+  "/media/manga/IMG_4969.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_4969.jpg",
+    "w": 437,
+    "h": 640
+  },
+  "/media/manga/IMG_4975.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_4975.jpg",
+    "w": 432,
+    "h": 640
+  },
+  "/media/manga/IMG_5180.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5180.jpg",
+    "w": 422,
+    "h": 640
+  },
+  "/media/manga/IMG_5249.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5249.jpg",
+    "w": 419,
+    "h": 640
+  },
+  "/media/manga/IMG_5250.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5250.jpg",
+    "w": 419,
+    "h": 640
+  },
+  "/media/manga/IMG_5251.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5251.jpg",
+    "w": 640,
+    "h": 456
+  },
+  "/media/manga/IMG_5253.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5253.jpg",
+    "w": 640,
+    "h": 462
+  },
+  "/media/manga/IMG_5261.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5261.jpg",
+    "w": 419,
+    "h": 640
+  },
+  "/media/manga/IMG_5262.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5262.jpg",
+    "w": 439,
+    "h": 640
+  },
+  "/media/manga/IMG_5267.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5267.jpg",
+    "w": 434,
+    "h": 640
+  },
+  "/media/manga/IMG_5268.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5268.jpg",
+    "w": 428,
+    "h": 640
+  },
+  "/media/manga/IMG_5272.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5272.jpg",
+    "w": 446,
+    "h": 640
+  },
+  "/media/manga/IMG_5283.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5283.jpg",
+    "w": 427,
+    "h": 640
+  },
+  "/media/manga/IMG_5284.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5284.jpg",
+    "w": 410,
+    "h": 640
+  },
+  "/media/manga/IMG_5285.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5285.jpg",
+    "w": 403,
+    "h": 640
+  },
+  "/media/manga/IMG_5298.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5298.jpg",
+    "w": 443,
+    "h": 640
+  },
+  "/media/manga/IMG_5384.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5384.jpg",
+    "w": 437,
+    "h": 640
+  },
+  "/media/manga/IMG_5393.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5393.jpg",
+    "w": 439,
+    "h": 640
+  },
+  "/media/manga/IMG_5394.JPG": {
+    "thumb": "/media/manga/thumbs/IMG_5394.jpg",
+    "w": 441,
+    "h": 640
+  }
+}

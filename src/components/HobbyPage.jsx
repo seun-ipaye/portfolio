@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { design, hiking, manga, mangaPanels } from "../data/hobbies";
+import { PRIORITY_COUNT, withMeta } from "../data/gallery";
 import "./HobbyPage.css";
 
 const PAGES = {
@@ -102,16 +103,31 @@ function Lightbox({ items, index, onClose, onChange }) {
   );
 }
 
+function Thumb({ item, priority, onOpen }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <button className="hb-thumb" onClick={onOpen} aria-label="View larger">
+      <img
+        ref={(img) => {
+          if (img?.complete && img.naturalWidth) setLoaded(true);
+        }}
+        className={loaded ? "loaded" : ""}
+        src={item.thumb || item.src}
+        width={item.w}
+        height={item.h}
+        alt={item.caption || ""}
+        fetchPriority={priority ? "high" : undefined}
+        onLoad={() => setLoaded(true)}
+      />
+    </button>
+  );
+}
+
 function Gallery({ items, empty }) {
-  const [wide, setWide] = useState({});
   const [open, setOpen] = useState(null);
 
   if (!items.length) return <p className="hb-empty">{empty}</p>;
-
-  const onLoad = (src) => (e) => {
-    const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
-    if (w > h * 1.05) setWide((prev) => ({ ...prev, [src]: true }));
-  };
 
   let wideCount = 0;
 
@@ -120,23 +136,17 @@ function Gallery({ items, empty }) {
       <div className="hb-gallery">
         {items.map((item, i) => {
           let cls = "";
-          if (wide[item.src]) {
+          if (item.w > item.h * 1.05) {
             cls = wideCount % 2 === 0 ? "wide wide-left" : "wide wide-right";
             wideCount += 1;
           }
           return (
             <figure key={item.src} className={cls}>
-              <button
-                className="hb-thumb"
-                onClick={() => setOpen(i)}
-                aria-label="View larger"
-              >
-                <img
-                  src={item.src}
-                  alt={item.caption || ""}
-                  onLoad={onLoad(item.src)}
-                />
-              </button>
+              <Thumb
+                item={item}
+                priority={i < PRIORITY_COUNT}
+                onOpen={() => setOpen(i)}
+              />
               {item.caption && <figcaption>{item.caption}</figcaption>}
             </figure>
           );
@@ -201,12 +211,12 @@ export default function HobbyPage({ kind }) {
       <h1>{page.title}</h1>
       <p className="hb-dim hb-intro">{page.intro}</p>
 
-      {kind === "design" && <Gallery items={design} empty={page.empty} />}
-      {kind === "hiking" && <Gallery items={hiking} empty={page.empty} />}
+      {kind === "design" && <Gallery items={withMeta(design)} empty={page.empty} />}
+      {kind === "hiking" && <Gallery items={withMeta(hiking)} empty={page.empty} />}
       {kind === "manga" && (
         <>
           <Gallery
-            items={mangaPanels.map((src) => ({ src }))}
+            items={withMeta(mangaPanels.map((src) => ({ src })))}
             empty={page.empty}
           />
           <MangaList items={manga} />
