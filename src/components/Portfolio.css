@@ -210,7 +210,7 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
 .pf-arrow {
   display: inline-block;
   margin-left: 0.5rem;
-  color: #6b6b6b;
+  color: #fff;
   transition:
     transform 0.2s ease,
     color 0.2s ease;
@@ -218,8 +218,7 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
 
 .pf-row-page:hover .pf-arrow,
 .pf-inline-link:hover .pf-arrow {
-  transform: translateX(4px);
-  color: #fff;
+  transform: translateX(4px) scale(1.35);
 }
 
 .pf-row-page:hover .pf-dim {

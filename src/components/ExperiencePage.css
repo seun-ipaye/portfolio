@@ -132,15 +132,16 @@
 
 .ex-arrow {
   display: inline-block;
+  color: #fff;
   transition: transform 0.2s ease;
 }
 
 .ex-prev:hover .ex-arrow {
-  transform: translateX(-4px);
+  transform: translateX(-4px) scale(1.35);
 }
 
 .ex-next:hover .ex-arrow {
-  transform: translateX(4px);
+  transform: translateX(4px) scale(1.35);
 }
 
 @media (max-width: 768px) {
