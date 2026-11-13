@@ -23,7 +23,7 @@ const PAGES = {
   },
 };
 
-function Lightbox({ items, index, onClose, onChange }) {
+export function Lightbox({ items, index, onClose, onChange }) {
   const count = items.length;
   const go = (step) => onChange((index + step + count) % count);
 
@@ -81,7 +81,15 @@ function Lightbox({ items, index, onClose, onChange }) {
         </button>
       )}
       <figure className="hb-lb-figure" onClick={(e) => e.stopPropagation()}>
-        <img src={item.src} alt={item.caption || ""} />
+        <img
+          src={item.src}
+          alt={item.caption || ""}
+          style={
+            item.src.endsWith(".svg") && item.w && item.h
+              ? { width: `min(92vw, ${(80 * item.w) / item.h}vh)` }
+              : undefined
+          }
+        />
         {item.caption && <figcaption>{item.caption}</figcaption>}
       </figure>
       {count > 1 && (

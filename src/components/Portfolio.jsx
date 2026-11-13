@@ -9,7 +9,7 @@ const professional = [
   {
     role: "Full Stack Developer (Founder)",
     company: "Sons of Caesar",
-    href: "https://sonsofcaesar.xyz",
+    page: "sons-of-caesar",
     date: "Mar 2026 – Present",
   },
   {
@@ -24,13 +24,13 @@ const professional = [
   {
     role: "Contact Center Co-op",
     company: "GreenShield",
-    href: "https://www.greenshield.ca",
+    page: "greenshield#contact-center",
     date: "May 2026 – Aug 2026",
   },
   {
     role: "Software Developer Co-op",
     company: "GreenShield",
-    href: "https://www.greenshield.ca",
+    page: "greenshield#developer",
     date: "Jan 2026 – Apr 2026",
   },
 ];
@@ -39,13 +39,13 @@ const leadership = [
   {
     role: "President",
     company: "ColorStack UWindsor",
-    href: "https://www.instagram.com/colorstackuwin/",
+    page: "colorstack-uwindsor",
     date: "Aug 2026 – Present",
   },
   {
     role: "Co-Founder & Co-President",
     company: "Black Students in Computer Science",
-    href: "https://www.instagram.com/uwinbscs/",
+    page: "bscs",
     date: "Oct 2025 – Present",
   },
 ];
@@ -106,7 +106,7 @@ function About() {
           <li>LLMs and AI tools</li>
           <li>
             <Link className="pf-inline-link" to="/open-source">
-              open source contributions
+              open source contributions<span className="pf-arrow">→</span>
             </Link>
           </li>
         </ul>
@@ -129,37 +129,51 @@ function About() {
 function ExperienceList({ items }) {
   return (
     <ul className="pf-rows">
-      {items.map((e) => (
-        <li key={e.role + e.company}>
-          <div className="pf-exp-text">
-            <span className="pf-row-main">
-              {e.role}{" "}
-              <span className="pf-dim">
-                ·{" "}
-                {e.href ? (
-                  <a
-                    className="pf-company"
-                    href={e.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {e.company}
-                  </a>
-                ) : (
-                  e.company
-                )}
+      {items.map((e) => {
+        const content = (
+          <>
+            <div className="pf-exp-text">
+              <span className="pf-row-main">
+                {e.role}{" "}
+                <span className="pf-dim">
+                  ·{" "}
+                  {e.href ? (
+                    <a
+                      className="pf-company"
+                      href={e.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {e.company}
+                    </a>
+                  ) : (
+                    e.company
+                  )}
+                </span>
+                {e.page && <span className="pf-arrow">→</span>}
               </span>
-            </span>
-            {e.details?.map(([course, when]) => (
-              <span key={course} className="pf-dim pf-detail">
-                <span>{course}</span>
-                <span>{when}</span>
-              </span>
-            ))}
-          </div>
-          {e.date && <span className="pf-dim pf-date">{e.date}</span>}
-        </li>
-      ))}
+              {e.details?.map(([course, when]) => (
+                <span key={course} className="pf-dim pf-detail">
+                  <span>{course}</span>
+                  <span>{when}</span>
+                </span>
+              ))}
+            </div>
+            {e.date && <span className="pf-dim pf-date">{e.date}</span>}
+          </>
+        );
+        return (
+          <li key={e.role + e.company}>
+            {e.page ? (
+              <Link className="pf-row-link pf-row-page" to={`/experience/${e.page}`}>
+                {content}
+              </Link>
+            ) : (
+              content
+            )}
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -179,16 +193,20 @@ function Pairs({ items, underlined }) {
   return (
     <ul className={underlined ? "pf-rows pf-underlined" : "pf-rows"}>
       {items.map(([name, text, href]) => {
+        const internal = href?.startsWith("/");
         const inner = (
           <>
-            <span className="pf-row-main">{name}</span>
+            <span className="pf-row-main">
+              {name}
+              {internal && <span className="pf-arrow">→</span>}
+            </span>
             <span className="pf-dim">{text}</span>
           </>
         );
         return (
           <li key={name}>
-            {href?.startsWith("/") ? (
-              <Link className="pf-row-link" to={href}>
+            {internal ? (
+              <Link className="pf-row-link pf-row-page" to={href}>
                 {inner}
               </Link>
             ) : href ? (

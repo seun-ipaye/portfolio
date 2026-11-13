@@ -134,9 +134,8 @@
   margin-bottom: 0.9rem;
 }
 
-.pf-inline-link {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.pf-inline-link:hover {
+  color: #fff;
 }
 
 .pf-about-text ul {
@@ -198,14 +197,33 @@
   width: 100%;
 }
 
-a.pf-row-link:hover .pf-row-main,
-.pf-underlined a.pf-row-link .pf-row-main {
+a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
+.pf-underlined a.pf-row-link:not(.pf-row-page) .pf-row-main {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .pf-row-main {
   color: #fff;
+}
+
+.pf-arrow {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #6b6b6b;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.pf-row-page:hover .pf-arrow,
+.pf-inline-link:hover .pf-arrow {
+  transform: translateX(4px);
+  color: #fff;
+}
+
+.pf-row-page:hover .pf-dim {
+  color: #bdbdbd;
 }
 
 .pf-company {

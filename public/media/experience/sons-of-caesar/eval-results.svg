@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <style>.t{fill:#fff;font-size:16px}.s{fill:#999;font-size:12px}.g{fill:#777;font-size:11px;letter-spacing:2px}.n{fill:#fff;font-size:28px}</style>
+  <rect width="720" height="560" fill="#000"/>
+  <text class="g" x="40" y="50">SUPPORT CHATBOT · EVAL RESULTS</text>
+  <text class="s" x="40" y="76">38 test cases, including prompt injection and data-leak attempts</text>
+
+  <text class="t" x="40" y="140">First baseline</text>
+  <text class="s" x="40" y="160">1 run</text>
+  <text class="n" x="680" y="150" text-anchor="end">32/35</text>
+  <rect x="40" y="176" width="640" height="10" fill="#333"/><rect x="40" y="176" width="585" height="10" fill="#999"/>
+
+  <text class="t" x="40" y="250">Fixed test cases, added re-entry policy</text>
+  <text class="s" x="40" y="270">3 runs</text>
+  <text class="n" x="680" y="260" text-anchor="end">112/114</text>
+  <rect x="40" y="286" width="640" height="10" fill="#333"/><rect x="40" y="286" width="629" height="10" fill="#bbb"/>
+
+  <text class="t" x="40" y="360">Told the agent not to infer unstated rules</text>
+  <text class="s" x="40" y="380">3 runs</text>
+  <text class="n" x="680" y="370" text-anchor="end">114/114</text>
+  <rect x="40" y="396" width="640" height="10" fill="#fff"/>
+
+  <line x1="40" y1="440" x2="680" y2="440" stroke="#333"/>
+  <text class="t" x="40" y="476">0 data leaks in the final runs</text>
+  <text class="s" x="40" y="500">The evals caught the agent making up policy, which led to the prompt fix.</text>
+  <text class="s" x="40" y="520">Cases are self-written, with no held-out set.</text>
+</svg>

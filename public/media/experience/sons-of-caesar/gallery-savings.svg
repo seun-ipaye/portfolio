@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <style>.t{fill:#fff;font-size:16px}.s{fill:#999;font-size:12px}.g{fill:#777;font-size:11px;letter-spacing:2px}.big{fill:#fff;font-size:44px}.box{fill:#000;stroke:#fff;stroke-width:1.2}</style>
+  <rect width="720" height="560" fill="#000"/>
+  <text class="g" x="40" y="50">GALLERY IMAGES · NIGHTMARE, 28 PHOTOS</text>
+
+  <text class="s" x="40" y="100">camera original</text>
+  <rect x="40" y="110" width="640" height="34" fill="#444"/>
+  <text class="t" x="40" y="168">1,081 KB each · 29.6 MB for the page</text>
+
+  <text class="s" x="40" y="220">full size, only when a photo is opened</text>
+  <rect x="40" y="230" width="92" height="34" fill="#999"/>
+  <text class="t" x="40" y="288">155 KB · 2000px WebP</text>
+
+  <text class="s" x="40" y="340">thumbnail, what the grid loads</text>
+  <rect x="40" y="350" width="15" height="34" fill="#fff"/>
+  <text class="t" x="40" y="408">25 KB · 800px WebP</text>
+
+  <line x1="40" y1="440" x2="680" y2="440" stroke="#333"/>
+  <text class="big" x="40" y="500">97.7% less</text>
+  <text class="s" x="40" y="528">the grid loads 0.7 MB instead of 29.6 MB, with a colour placeholder while each loads</text>
+</svg>

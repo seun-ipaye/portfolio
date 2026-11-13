@@ -1,13 +1,22 @@
 // Makes grid thumbnails for the gallery photos and records every photo's size.
 // Run after adding photos:  npm run thumbs   (macOS only: uses sips)
 import { execFileSync } from "node:child_process";
-import { mkdirSync, openSync, readSync, closeSync, readdirSync, writeFileSync } from "node:fs";
-import { extname, join, parse } from "node:path";
+import {
+  closeSync,
+  mkdirSync,
+  openSync,
+  readSync,
+  readdirSync,
+  writeFileSync,
+} from "node:fs";
+import { join, parse } from "node:path";
 
+// recursive: also look inside subfolders (experience/<slug>/...)
 const FOLDERS = {
   hiking: { longEdge: 800, quality: 68 },
   manga: { longEdge: 640, quality: 68 },
   design: { longEdge: 800, quality: 68 },
+  experience: { longEdge: 1000, quality: 72, recursive: true },
 };
 const IMAGE = /\.(jpe?g|png)$/i;
 
@@ -48,37 +57,46 @@ const size = (file) => {
   return orientation(file) >= 5 ? [h, w] : [w, h];
 };
 
+// Every photo under `dir` as a path relative to it, skipping thumbs/ folders.
+const listImages = (dir, recursive, prefix = "") => {
+  let entries;
+  try {
+    entries = readdirSync(join(dir, prefix), { withFileTypes: true });
+  } catch {
+    return [];
+  }
+  return entries.flatMap((e) => {
+    const rel = join(prefix, e.name);
+    if (e.isDirectory()) {
+      return recursive && e.name !== "thumbs" ? listImages(dir, recursive, rel) : [];
+    }
+    return IMAGE.test(e.name) ? [rel] : [];
+  });
+};
+
 const meta = {};
 
-for (const [folder, { longEdge, quality }] of Object.entries(FOLDERS)) {
+for (const [folder, { longEdge, quality, recursive }] of Object.entries(FOLDERS)) {
   const dir = join("public/media", folder);
-  let files;
-  try {
-    files = readdirSync(dir).filter((f) => IMAGE.test(f));
-  } catch {
-    continue;
-  }
+  const files = listImages(dir, recursive).sort();
   if (!files.length) continue;
 
-  const thumbDir = join(dir, "thumbs");
-  mkdirSync(thumbDir, { recursive: true });
-
-  for (const file of files.sort()) {
-    const out = join(thumbDir, `${parse(file).name}.jpg`);
+  for (const rel of files) {
+    const { dir: sub, name } = parse(rel);
+    const thumbDir = join(dir, sub, "thumbs");
+    mkdirSync(thumbDir, { recursive: true });
+    const out = join(thumbDir, `${name}.jpg`);
     execFileSync("sips", [
       "-Z", String(longEdge),
       "-s", "format", "jpeg",
       "-s", "formatOptions", String(quality),
-      join(dir, file),
+      join(dir, rel),
       "--out", out,
     ], { stdio: "ignore" });
     // the grid shows the thumbnail, so record its exact size
     const [w, h] = size(out);
-    meta[`/media/${folder}/${file}`] = {
-      thumb: `/media/${folder}/thumbs/${parse(file).name}.jpg`,
-      w,
-      h,
-    };
+    const url = (p) => `/media/${folder}/${p.split("\\").join("/")}`;
+    meta[url(rel)] = { thumb: url(join(sub, "thumbs", `${name}.jpg`)), w, h };
   }
   console.log(`${folder}: ${files.length} thumbnails`);
 }

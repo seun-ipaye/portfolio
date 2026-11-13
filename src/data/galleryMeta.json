@@ -138,5 +138,20 @@
     "thumb": "/media/manga/thumbs/IMG_5394.jpg",
     "w": 441,
     "h": 640
+  },
+  "/media/experience/sons-of-caesar/admin-dashboard.png": {
+    "thumb": "/media/experience/sons-of-caesar/thumbs/admin-dashboard.jpg",
+    "w": 1000,
+    "h": 891
+  },
+  "/media/experience/sons-of-caesar/chatbot.png": {
+    "thumb": "/media/experience/sons-of-caesar/thumbs/chatbot.jpg",
+    "w": 718,
+    "h": 1000
+  },
+  "/media/experience/sons-of-caesar/event-photo-covered-eyes.png": {
+    "thumb": "/media/experience/sons-of-caesar/thumbs/event-photo-covered-eyes.jpg",
+    "w": 1000,
+    "h": 750
   }
 }

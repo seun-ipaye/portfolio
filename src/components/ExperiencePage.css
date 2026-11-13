@@ -1,0 +1,162 @@
+/* src/components/ExperiencePage.css */
+
+.ex-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
+
+.ex-meta p {
+  margin: 0;
+  color: #fff;
+}
+
+.ex-link {
+  align-self: flex-start;
+  color: #bdbdbd;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.ex-link:hover {
+  color: #fff;
+}
+
+.ex-summary,
+.ex-text {
+  max-width: 640px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #7a7a7a;
+}
+
+.ex-summary {
+  margin: 1.5rem 0 0;
+  color: #bdbdbd;
+}
+
+.ex-text {
+  margin: 0 0 1rem;
+}
+
+.ex-section {
+  max-width: 640px;
+  margin-top: 2.5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.ex-section .hb-section {
+  margin: 0 0 0.75rem;
+}
+
+.ex-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.ex-stats dt {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ex-stats dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+}
+
+.ex-figure {
+  margin: 0 0 1rem;
+}
+
+.ex-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.ex-figure img.loaded {
+  opacity: 1;
+}
+
+.ex-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #7a7a7a;
+}
+
+.ex-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  padding: 1rem;
+  border: 1px solid #1c1c1c;
+  color: #4a4a4a;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.ex-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin: 3rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+.ex-prev,
+.ex-next {
+  color: #6b6b6b;
+  transition: color 0.2s ease;
+}
+
+.ex-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.ex-prev:hover,
+.ex-next:hover {
+  color: #fff;
+}
+
+.ex-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.ex-prev:hover .ex-arrow {
+  transform: translateX(-4px);
+}
+
+.ex-next:hover .ex-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .ex-meta {
+    font-size: 0.8rem;
+  }
+
+  .ex-meta .hb-dim {
+    font-size: 0.72rem;
+  }
+
+  .ex-link {
+    font-size: 0.78rem;
+  }
+
+  .ex-nav {
+    font-size: 0.8rem;
+  }
+}
