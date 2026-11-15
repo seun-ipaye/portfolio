@@ -260,7 +260,7 @@ export default function Portfolio({ calm, onToggleCalm, music }) {
           }}
           aria-label={calm ? "bring the waves back" : "turn off the background"}
           aria-pressed={calm}
-          title={calm ? "bring the waves back" : "turn off the background"}
+          data-tip={calm ? "bring the waves back" : "turn off the background"}
         >
           —
         </button>
@@ -270,7 +270,7 @@ export default function Portfolio({ calm, onToggleCalm, music }) {
             onClick={() => setPlay((p) => !p)}
             aria-label={play ? "show the page" : "play with the waves"}
             aria-pressed={play}
-            title={play ? "show the page (esc)" : "play with the waves"}
+            data-tip={play ? "show the page (esc)" : "play with the waves"}
           >
             ≈
           </button>
@@ -305,7 +305,7 @@ export default function Portfolio({ calm, onToggleCalm, music }) {
           onClick={music.toggle}
           aria-label={music.on ? "turn the music off" : "turn the music on"}
           aria-pressed={music.on}
-          title={music.on ? "music off" : "music on"}
+          data-tip={music.on ? "music off" : "music on"}
         >
           {music.loading ? "…" : "♪"}
         </button>

@@ -397,3 +397,62 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
     margin-bottom: 0.6rem;
   }
 }
+
+/* tooltips for the icon buttons (instead of the browser's own title popup) */
+.pf-calm,
+.pf-wave,
+.pf-music {
+  position: relative;
+}
+
+.pf-calm::after,
+.pf-wave::after,
+.pf-music::after {
+  content: attr(data-tip);
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  padding: 0.3rem 0.55rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: #000;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    visibility 0.15s;
+  pointer-events: none;
+}
+
+.pf-calm::after,
+.pf-wave::after {
+  top: calc(100% + 0.6rem);
+}
+
+.pf-music::after {
+  bottom: calc(100% + 0.6rem);
+  transform: translateY(-4px);
+}
+
+.pf-calm:hover::after,
+.pf-wave:hover::after,
+.pf-music:hover::after,
+.pf-calm:focus-visible::after,
+.pf-wave:focus-visible::after,
+.pf-music:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+@media (hover: none) {
+  .pf-calm::after,
+  .pf-wave::after,
+  .pf-music::after {
+    display: none;
+  }
+}
