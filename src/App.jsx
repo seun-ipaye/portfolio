@@ -8,6 +8,7 @@ import OpenSource from "./components/OpenSource";
 import ExperiencePage from "./components/ExperiencePage";
 import { design, hiking, mangaPanels } from "./data/hobbies";
 import { warmGalleries } from "./data/gallery";
+import { useMusic } from "./data/music";
 
 function App() {
   const [calm, setCalm] = useState(() => {
@@ -17,6 +18,8 @@ function App() {
       return false;
     }
   });
+
+  const music = useMusic();
 
   const toggleCalm = () =>
     setCalm((c) => {
@@ -40,7 +43,12 @@ function App() {
         <AsciiField />
       )}
       <Routes>
-        <Route path="/" element={<Portfolio calm={calm} onToggleCalm={toggleCalm} />} />
+        <Route path="/" element={
+            <Portfolio
+              calm={calm} onToggleCalm={toggleCalm}
+              music={music}
+            />
+          } />
         <Route path="/design" element={<HobbyPage kind="design" />} />
         <Route path="/manga" element={<HobbyPage kind="manga" />} />
         <Route path="/hiking" element={<HobbyPage kind="hiking" />} />

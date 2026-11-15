@@ -228,7 +228,7 @@ function Pairs({ items, underlined }) {
   );
 }
 
-export default function Portfolio({ calm, onToggleCalm }) {
+export default function Portfolio({ calm, onToggleCalm, music }) {
   const location = useLocation();
   const [tab, setTab] = useState(location.state?.tab || "about");
   const [play, setPlay] = useState(false);
@@ -300,6 +300,15 @@ export default function Portfolio({ calm, onToggleCalm }) {
             {label}
           </a>
         ))}
+        <button
+          className="pf-music"
+          onClick={music.toggle}
+          aria-label={music.on ? "turn the music off" : "turn the music on"}
+          aria-pressed={music.on}
+          title={music.on ? "music off" : "music on"}
+        >
+          {music.loading ? "…" : "♪"}
+        </button>
       </footer>
     </main>
   );

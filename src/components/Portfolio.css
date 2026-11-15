@@ -51,7 +51,7 @@
 
 .pf-tabs button:not(.pf-wave):not(.pf-calm),
 .pf-content,
-.pf-footer {
+.pf-footer a {
   transition:
     opacity 0.4s ease,
     visibility 0.4s,
@@ -60,7 +60,7 @@
 
 .pf-play .pf-tabs button:not(.pf-wave):not(.pf-calm),
 .pf-play .pf-content,
-.pf-play .pf-footer {
+.pf-play .pf-footer a {
   opacity: 0;
   visibility: hidden;
 }
@@ -281,6 +281,21 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
 }
 
 .pf-footer a:hover {
+  color: #fff;
+}
+
+.pf-music {
+  margin-left: auto;
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #6b6b6b;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.pf-music:hover,
+.pf-music[aria-pressed="true"] {
   color: #fff;
 }
 
