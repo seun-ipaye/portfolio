@@ -228,7 +228,7 @@ function Pairs({ items, underlined }) {
   );
 }
 
-export default function Portfolio() {
+export default function Portfolio({ calm, onToggleCalm }) {
   const location = useLocation();
   const [tab, setTab] = useState(location.state?.tab || "about");
   const [play, setPlay] = useState(false);
@@ -241,7 +241,7 @@ export default function Portfolio() {
   }, [play]);
 
   return (
-    <main className={play ? "pf pf-play" : "pf"}>
+    <main className={play && !calm ? "pf pf-play" : "pf"}>
       <nav className="pf-tabs">
         {TABS.map((t) => (
           <button
@@ -253,14 +253,28 @@ export default function Portfolio() {
           </button>
         ))}
         <button
-          className="pf-wave"
-          onClick={() => setPlay((p) => !p)}
-          aria-label={play ? "show the page" : "play with the waves"}
-          aria-pressed={play}
-          title={play ? "show the page (esc)" : "play with the waves"}
+          className="pf-calm"
+          onClick={() => {
+            setPlay(false);
+            onToggleCalm();
+          }}
+          aria-label={calm ? "bring the waves back" : "turn off the background"}
+          aria-pressed={calm}
+          title={calm ? "bring the waves back" : "turn off the background"}
         >
-          ≈
+          —
         </button>
+        {!calm && (
+          <button
+            className="pf-wave"
+            onClick={() => setPlay((p) => !p)}
+            aria-label={play ? "show the page" : "play with the waves"}
+            aria-pressed={play}
+            title={play ? "show the page (esc)" : "play with the waves"}
+          >
+            ≈
+          </button>
+        )}
       </nav>
 
       <section className="pf-content" key={tab}>

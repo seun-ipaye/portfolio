@@ -41,11 +41,15 @@
   color: #fff;
 }
 
-.pf-wave {
+.pf-calm {
   margin-left: auto;
 }
 
-.pf-tabs button:not(.pf-wave),
+.pf-calm[aria-pressed="true"] {
+  color: #fff;
+}
+
+.pf-tabs button:not(.pf-wave):not(.pf-calm),
 .pf-content,
 .pf-footer {
   transition:
@@ -54,7 +58,7 @@
     color 0.2s ease;
 }
 
-.pf-play .pf-tabs button:not(.pf-wave),
+.pf-play .pf-tabs button:not(.pf-wave):not(.pf-calm),
 .pf-play .pf-content,
 .pf-play .pf-footer {
   opacity: 0;

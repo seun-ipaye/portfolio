@@ -1,5 +1,5 @@
 // src/App.jsx
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import AsciiField from "./components/AsciiField";
 import Portfolio from "./components/Portfolio";
@@ -10,15 +10,37 @@ import { design, hiking, mangaPanels } from "./data/hobbies";
 import { warmGalleries } from "./data/gallery";
 
 function App() {
+  const [calm, setCalm] = useState(() => {
+    try {
+      return localStorage.getItem("calm") === "1";
+    } catch {
+      return false;
+    }
+  });
+
+  const toggleCalm = () =>
+    setCalm((c) => {
+      try {
+        localStorage.setItem("calm", c ? "0" : "1");
+      } catch {
+        /* ignore */
+      }
+      return !c;
+    });
+
   useEffect(() => {
     warmGalleries(hiking, mangaPanels.map((src) => ({ src })), design);
   }, []);
 
   return (
     <>
-      <AsciiField />
+      {calm ? (
+        <div style={{ position: "fixed", inset: 0, background: "#000" }} />
+      ) : (
+        <AsciiField />
+      )}
       <Routes>
-        <Route path="/" element={<Portfolio />} />
+        <Route path="/" element={<Portfolio calm={calm} onToggleCalm={toggleCalm} />} />
         <Route path="/design" element={<HobbyPage kind="design" />} />
         <Route path="/manga" element={<HobbyPage kind="manga" />} />
         <Route path="/hiking" element={<HobbyPage kind="hiking" />} />
