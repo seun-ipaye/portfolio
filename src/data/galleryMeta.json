@@ -139,6 +139,31 @@
     "w": 441,
     "h": 640
   },
+  "/media/experience/bscs/career-event.jpg": {
+    "thumb": "/media/experience/bscs/thumbs/career-event.jpg",
+    "w": 1000,
+    "h": 750
+  },
+  "/media/experience/bscs/exec-dinner.jpg": {
+    "thumb": "/media/experience/bscs/thumbs/exec-dinner.jpg",
+    "w": 1000,
+    "h": 750
+  },
+  "/media/experience/bscs/games-night.jpg": {
+    "thumb": "/media/experience/bscs/thumbs/games-night.jpg",
+    "w": 1000,
+    "h": 750
+  },
+  "/media/experience/bscs/hangout.jpg": {
+    "thumb": "/media/experience/bscs/thumbs/hangout.jpg",
+    "w": 1000,
+    "h": 750
+  },
+  "/media/experience/bscs/involvement-fair.jpg": {
+    "thumb": "/media/experience/bscs/thumbs/involvement-fair.jpg",
+    "w": 1000,
+    "h": 564
+  },
   "/media/experience/greenshield/clearcall-by-call-reason.png": {
     "thumb": "/media/experience/greenshield/thumbs/clearcall-by-call-reason.jpg",
     "w": 1000,

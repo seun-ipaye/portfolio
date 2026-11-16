@@ -217,22 +217,76 @@ export const experiencePages = [
     title: "Black Students in Computer Science",
     roles: [["Co-Founder & Co-President", "Oct 2025 – Present"]],
     links: [["instagram", "https://www.instagram.com/uwinbscs/"]],
-    summary: "Placeholder: one sentence on what BSCS is.",
+    summary:
+      "I co-founded Black Students in Computer Science at the University of Windsor, a club that connects Black students in tech to community and careers.",
     sections: [
       {
         heading: "why we started it",
-        text: ["Placeholder: the story."],
-        image: { caption: "photo from an event" },
+        text: [
+          "I was part of NSBE, and I noticed there was no similar space for Black students in computer science. We saw each other in classes, but we didn't know each other. There was no connection and no community, so I started filling that gap with my co-founders.",
+          "We began in October 2025 and are now a ratified club at UWindsor.",
+        ],
+        image: {
+          src: "/media/experience/bscs/involvement-fair.jpg",
+          caption:
+            "our table at the involvement fair, next to the Google Developer Group",
+        },
       },
       {
         heading: "what we do",
-        text: ["Placeholder: events, programs and who it's for."],
+        text: [
+          "Our mission is to connect Black students in tech to careers, and to make the community fun along the way. In about a year we've run around 15 events, from board game hangouts to career panels.",
+        ],
+        image: {
+          src: "/media/experience/bscs/hangout.jpg",
+          caption: "board game hangout",
+        },
+      },
+      {
+        heading: "career events",
+        text: [
+          "Our biggest event was a career night in collaboration with NSBE, with more than 150 attendees, speakers, and plenty of networking and activities.",
+          "Last semester I also led our own career event, with five speakers from different parts of tech.",
+        ],
+        image: {
+          src: "/media/experience/bscs/career-event.jpg",
+          caption: "our career event, with five speakers",
+        },
+      },
+      {
+        heading: "trivia night",
+        text: [
+          "Not everything is career-focused. Trivia night was a quiz show, hosted by our very own Steve Harvey (Nifemi).",
+        ],
+        image: {
+          src: "/media/experience/bscs/games-night.jpg",
+          caption: "trivia night",
+        },
+      },
+      {
+        heading: "the exec team",
+        text: [
+          "As co-president, I oversee everything: finances, events and where the club goes next. I host meetings, and I act as a bridge between the club and other groups, like ColorStack, RAEON and the co-op office. My co-president does the same.",
+          "We're an exec team of about 12, including a vice president, heads of events, technology and marketing, a treasurer, a secretary and a few junior roles. We start each semester with an exec dinner.",
+        ],
+        image: {
+          src: "/media/experience/bscs/exec-dinner.jpg",
+          caption: "exec dinner at the start of the semester",
+        },
       },
       {
         heading: "by the numbers",
         stats: [
-          { value: "—", label: "members" },
-          { value: "—", label: "events" },
+          { value: "70", label: "members" },
+          { value: "15", label: "events" },
+          { value: "150+", label: "at our biggest event" },
+          { value: "12", label: "execs" },
+        ],
+      },
+      {
+        heading: "what I learned",
+        text: [
+          "Running a club taught me how to lead a team, work with other organizations, and creating something people care about.",
         ],
       },
     ],
