@@ -59,8 +59,8 @@ export default function ExperiencePage() {
 
   const prev = experiencePages[index - 1];
   const next = experiencePages[index + 1];
-  const images = page.sections.flatMap((s) =>
-    s.image?.src ? [s.image] : [],
+  const images = withMeta(
+    page.sections.flatMap((s) => (s.image?.src ? [s.image] : [])),
   );
   let firstImage = true;
 
@@ -93,7 +93,7 @@ export default function ExperiencePage() {
       <p className="ex-summary">{page.summary}</p>
 
       {page.sections.map((s) => {
-        const imageIndex = s.image?.src ? images.indexOf(s.image) : -1;
+        const imageIndex = s.image?.src ? images.findIndex((im) => im.src === s.image.src) : -1;
         const priority = s.image?.src && firstImage;
         if (s.image?.src) firstImage = false;
         return (

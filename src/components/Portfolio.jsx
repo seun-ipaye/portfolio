@@ -30,7 +30,7 @@ const professional = [
   {
     role: "Software Developer Co-op",
     company: "GreenShield",
-    page: "greenshield#developer",
+    page: "greenshield",
     date: "Jan 2026 – Apr 2026",
   },
 ];

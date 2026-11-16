@@ -111,27 +111,79 @@ export const experiencePages = [
       ["Contact Center Co-op", "May 2026 – Aug 2026"],
     ],
     summary:
-      "Placeholder: one sentence on your two co-op terms at GreenShield.",
+      "Two co-op terms at GreenShield: first as a software developer on providerConnect, then on the phones in the contact center.",
     sections: [
       {
         id: "developer",
         heading: "software developer co-op",
         text: [
-          "Placeholder: what you built, the tools you used and what changed because of it.",
+          "I worked on providerConnect, the web portal GreenShield and several other insurers offer to health care providers. Providers use it to check payments and statements, submit claims, get dental breakdowns etc. There are two sites, one for dental providers and one for every other kind of provider, on separate codebases. I worked on both, and a change to one meant making it on the other too, so every change was done twice.",
+          "I built with C#, ASP.NET and SQL, mostly on the UI. I also helped with about five support tickets.",
         ],
-        image: { caption: "screenshot (blur or fake any real data)" },
+        image: {
+          src: "/media/experience/greenshield/providerconnect-home.png",
+          caption: "providerConnect's public home page",
+        },
+      },
+      {
+        heading: "the dynamic form",
+        text: [
+          'My main project was the "send a form or document" feature. It started as one long form that showed every field at once, and it gave an error if you filled in two fields that contradicted each other.',
+          "I rebuilt it so that picking what you're sending shows only the fields that make sense for it. Fields that conflict never appear together, so there is no error to give.",
+          "I also added an invisible reCAPTCHA to the site, which the company later rolled back after some of its larger clients objected.",
+        ],
+        image: {
+          src: "/media/experience/greenshield/dynamic-form.svg",
+          w: 720,
+          h: 400,
+          caption: "the form before and after (simplified)",
+        },
       },
       {
         id: "contact-center",
         heading: "contact center co-op",
         text: [
-          "Placeholder: what the role taught you, and the dashboard you built.",
+          "I took calls from plan members and providers for GreenShield and its partner clients. Members called about claims and coverage. Providers mostly called about the portal and claim submissions. When I couldn't resolve something, I put the caller on hold and called a coordinator. After each call I picked the reason from a dropdown of about 30 options.",
+          "The dropdown tells you what a call was about, but not how the caller felt or how hard it was to sort out. ClearCall is my attempt at that second part.",
         ],
-        image: { caption: "the dashboard (fake data only)" },
+      },
+      {
+        heading: "the dashboard",
+        text: [
+          "I built it with Python and FastAPI on the backend and React with Recharts on the frontend. It runs on 1,000 mock call records I generated, each with the fields I filled in on real calls (caller type, client, reason, duration, escalated or not, province, outcome) plus a transcript. There are five views: overview, by call reason, by client, by province and transcript insights.",
+        ],
+        image: {
+          src: "/media/experience/greenshield/clearcall-by-call-reason.png",
+          caption: "ClearCall, by call reason (mock data)",
+        },
+      },
+      {
+        heading: "mock data, real pipeline",
+        text: [
+          "The data is mock, and I weighted it so a few patterns I'd seen on the phones show up. The charts show what I built in, not findings about GreenShield. The point was the pipeline and the views.",
+        ],
+        image: {
+          src: "/media/experience/greenshield/clearcall-by-client.png",
+          caption: "ClearCall, by client (mock data)",
+        },
+      },
+      {
+        heading: "scoring the transcripts with Claude",
+        text: [
+          "A script sends each transcript to Claude and asks for three things back as JSON: a sentiment score from -1 to 1, a complexity score from 0 to 10 and an escalation-risk flag (low, medium or high). It checks each reply, retries on errors and saves after every call, so a stopped run picks up where it left off. The scores feed the Transcript Insights page: sentiment by month, the risk breakdown and a list of high-risk calls.",
+          "The transcripts are templated, so they're more uniform than real calls. I haven't checked Claude's scores against human ratings, so treat them as a demo of the pipeline.",
+        ],
+        image: {
+          src: "/media/experience/greenshield/clearcall-transcript-insights.png",
+          caption: "ClearCall, transcript insights (mock data)",
+        },
       },
       {
         heading: "what I learned",
-        text: ["Placeholder: one or two lines."],
+        text: [
+          "On the phones I saw what call data leaves out. Building ClearCall showed me that the hard part of analytics is deciding what to measure.",
+          "As a developer I learned how software gets made in production: sprint branches, Azure DevOps, and requirements that come from the business.",
+        ],
       },
     ],
   },

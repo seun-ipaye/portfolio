@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <style>.t{fill:#fff;font-size:15px}.s{fill:#999;font-size:12px}.g{fill:#777;font-size:11px;letter-spacing:2px}.b{fill:none;stroke:#444;stroke-width:1}.on{fill:none;stroke:#fff;stroke-width:1.2}.x{fill:#7a3b2e;font-size:12px}</style>
+  <rect width="720" height="400" fill="#000"/>
+  <text class="g" x="40" y="44">BEFORE</text>
+  <text class="s" x="40" y="66">one long form, every field visible</text>
+  <rect class="b" x="40" y="86" width="280" height="30"/><text class="s" x="52" y="106">what you're sending</text>
+  <rect class="b" x="40" y="126" width="280" height="30"/><text class="s" x="52" y="146">field A</text>
+  <rect class="b" x="40" y="166" width="280" height="30"/><text class="s" x="52" y="186">field B</text>
+  <rect class="b" x="40" y="206" width="280" height="30"/><text class="s" x="52" y="226">field C</text>
+  <rect class="b" x="40" y="246" width="280" height="30"/><text class="s" x="52" y="266">field D</text>
+  <text class="x" x="40" y="312">⚠ error: A and C can't both be filled in</text>
+  <text class="s" x="40" y="336">the user finds out after submitting</text>
+
+  <line x1="360" y1="60" x2="360" y2="360" stroke="#222"/>
+
+  <text class="g" x="400" y="44">AFTER</text>
+  <text class="s" x="400" y="66">pick a type, see only what applies</text>
+  <rect class="on" x="400" y="86" width="280" height="30"/><text class="t" x="412" y="106">what you're sending: 1</text>
+  <rect class="b" x="400" y="126" width="280" height="30"/><text class="s" x="412" y="146">field A</text>
+  <rect class="b" x="400" y="166" width="280" height="30"/><text class="s" x="412" y="186">field B</text>
+  <text class="g" x="400" y="226">HIDDEN: field C, field D</text>
+  <text class="s" x="400" y="312">conflicting fields never appear together,</text>
+  <text class="s" x="400" y="332">so the error can't happen</text>
+</svg>

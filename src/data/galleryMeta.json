@@ -139,6 +139,26 @@
     "w": 441,
     "h": 640
   },
+  "/media/experience/greenshield/clearcall-by-call-reason.png": {
+    "thumb": "/media/experience/greenshield/thumbs/clearcall-by-call-reason.jpg",
+    "w": 1000,
+    "h": 520
+  },
+  "/media/experience/greenshield/clearcall-by-client.png": {
+    "thumb": "/media/experience/greenshield/thumbs/clearcall-by-client.jpg",
+    "w": 1000,
+    "h": 519
+  },
+  "/media/experience/greenshield/clearcall-transcript-insights.png": {
+    "thumb": "/media/experience/greenshield/thumbs/clearcall-transcript-insights.jpg",
+    "w": 1000,
+    "h": 519
+  },
+  "/media/experience/greenshield/providerconnect-home.png": {
+    "thumb": "/media/experience/greenshield/thumbs/providerconnect-home.jpg",
+    "w": 1000,
+    "h": 518
+  },
   "/media/experience/sons-of-caesar/admin-dashboard.png": {
     "thumb": "/media/experience/sons-of-caesar/thumbs/admin-dashboard.jpg",
     "w": 1000,

@@ -1,5 +1,6 @@
 // src/components/HobbyPage.jsx
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { design, hiking, manga, mangaPanels } from "../data/hobbies";
 import { PRIORITY_COUNT, withMeta } from "../data/gallery";
@@ -55,8 +56,9 @@ export function Lightbox({ items, index, onClose, onChange }) {
   };
 
   const item = items[index];
+  const sized = Boolean(item.w && item.h);
 
-  return (
+  return createPortal(
     <div
       className="hb-lightbox"
       role="dialog"
@@ -80,13 +82,28 @@ export function Lightbox({ items, index, onClose, onChange }) {
           ‹
         </button>
       )}
-      <figure className="hb-lb-figure" onClick={(e) => e.stopPropagation()}>
+      <figure
+        className="hb-lb-figure"
+        onClick={(e) => e.stopPropagation()}
+        style={
+          sized
+            ? { width: `min(92vw, ${(80 * item.w) / item.h}vh)`, maxWidth: "none" }
+            : undefined
+        }
+      >
         <img
           src={item.src}
           alt={item.caption || ""}
           style={
-            item.src.endsWith(".svg") && item.w && item.h
-              ? { width: `min(92vw, ${(80 * item.w) / item.h}vh)` }
+            sized
+              ? {
+                  width: "100%",
+                  height: "auto",
+                  aspectRatio: `${item.w} / ${item.h}`,
+                  maxWidth: "none",
+                  maxHeight: "none",
+                  objectFit: "contain",
+                }
               : undefined
           }
         />
@@ -108,6 +125,8 @@ export function Lightbox({ items, index, onClose, onChange }) {
         {index + 1} / {count}
       </span>
     </div>
+    ,
+    document.body,
   );
 }
 
