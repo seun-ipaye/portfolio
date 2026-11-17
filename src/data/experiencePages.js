@@ -192,22 +192,48 @@ export const experiencePages = [
     title: "ColorStack UWindsor",
     roles: [["President", "Aug 2026 – Present"]],
     links: [["instagram", "https://www.instagram.com/colorstackuwin/"]],
-    summary: "Placeholder: one sentence on what the chapter is.",
+    summary:
+      "I started the UWindsor chapter of ColorStack, a national community for Black and Latinx students in computer science, and I'm its president.",
     sections: [
       {
-        heading: "why I started it",
-        text: ["Placeholder: the story."],
-        image: { caption: "photo from a meeting or event" },
+        heading: "what is ColorStack",
+        text: [
+          "ColorStack is a nonprofit community for Black and Latinx students in computer science. Members across the US and Canada talk to each other and trade advice in a national Slack, which also has job and internship referrals. There's an annual summit and programs for members, and some companies are direct partners with ColorStack.",
+          "For me, the community is the most important part: a national network of students, and the opportunities that come with it.",
+        ],
+      },
+      {
+        heading: "starting the UWindsor chapter",
+        text: [
+          "There was no ColorStack at UWindsor before, so I started the chapter. It's the second in Canada, after the University of Alberta, and the only one in Ontario. I became president in August 2026.",
+          "ColorStack and BSCS are similar, but BSCS is focused on building community, while ColorStack is focused on how to get internships.",
+        ],
+        image: {
+          src: "/media/experience/colorstack-uwindsor/work-session.jpg",
+          caption: "resume review with the co-op office, the hands-on part after the presentation",
+        },
       },
       {
         heading: "what we do",
-        text: ["Placeholder: events, programs and who it's for."],
+        text: [
+          "We meet about once a month. So far we've run two sessions: LeetCode and Chill, a practice session for coding interviews, and a resume review with the co-op office.",
+        ],
+        image: {
+          src: "/media/experience/colorstack-uwindsor/whiteboard-session.jpg",
+          caption: "LeetCode and Chill",
+        },
       },
       {
         heading: "by the numbers",
         stats: [
-          { value: "—", label: "members" },
-          { value: "—", label: "events" },
+          { value: "40", label: "members" },
+          { value: "2", label: "sessions so far" },
+        ],
+      },
+      {
+        heading: "what I learned",
+        text: [
+          "Starting the chapter showed me that I don't have to wait for a space to exist. If I want to connect students at my school to a national community, I can just do it.",
         ],
       },
     ],
