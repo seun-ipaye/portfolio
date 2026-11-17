@@ -85,7 +85,7 @@ const links = [
   ["email", "mailto:seuneipaye@gmail.com"],
   ["github", "https://github.com/seun-ipaye"],
   ["linkedin", "https://linkedin.com/in/seunipaye"],
-  ["resume", "/media/main-3.pdf"],
+  ["resume", "/media/web_resume.pdf"],
 ];
 
 function About() {
@@ -165,7 +165,10 @@ function ExperienceList({ items }) {
         return (
           <li key={e.role + e.company}>
             {e.page ? (
-              <Link className="pf-row-link pf-row-page" to={`/experience/${e.page}`}>
+              <Link
+                className="pf-row-link pf-row-page"
+                to={`/experience/${e.page}`}
+              >
                 {content}
               </Link>
             ) : (
