@@ -51,6 +51,11 @@ const leadership = [
 ];
 
 const projects = [
+  [
+    "RunNow",
+    "finds running loops in Toronto with the fewest red lights",
+    "https://run-now-production.up.railway.app",
+  ],
   ["Sons of Caesar", "website for my events group", "https://sonsofcaesar.xyz"],
   [
     "Frogg",
