@@ -426,6 +426,7 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
   .pf-rows li.pf-project {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.25rem;
   }
 

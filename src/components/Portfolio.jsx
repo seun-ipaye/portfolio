@@ -92,13 +92,13 @@ const projects = [
     text: "notifies volunteers when students request a campus walk",
     stack: "React Native, Expo, TypeScript, Firebase",
   },
-  {
-    name: "Spotify Playlist Manager",
-    text: "organizing and managing playlists",
-    href: "https://sptfymngr.site/",
-    github: "https://github.com/seun-ipaye/SpotifyManager",
-    stack: "JavaScript, Spotify API",
-  },
+  // {
+  //   name: "Spotify Playlist Manager",
+  //   text: "organizing and managing playlists",
+  //   href: "https://sptfymngr.site/",
+  //   github: "https://github.com/seun-ipaye/SpotifyManager",
+  //   stack: "JavaScript, Spotify API",
+  // },
 ];
 
 const hobbies = [
