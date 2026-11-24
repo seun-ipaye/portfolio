@@ -50,34 +50,51 @@ const leadership = [
   },
 ];
 
+// name links to the live thing; github is the repo; stack shows on the right.
 const projects = [
-  [
-    "RunNow",
-    "finds running loops in Toronto with the fewest red lights",
-    "https://run-now-production.up.railway.app",
-  ],
-  ["Sons of Caesar", "website for my events group", "https://sonsofcaesar.xyz"],
-  [
-    "Frogg",
-    "Discord bot that posts Canadian internships every 6 hours",
-    "https://top.gg/bot/1538298422807765002",
-  ],
-  [
-    "OAMax",
-    "Chrome extension for randomized LeetCode practice and timed OA simulation",
-    "https://chromewebstore.google.com/detail/oamax/ihegbmjjphimjplnekfadnphldihopnd",
-  ],
-  [
-    "ascii-waves",
-    "npm library for animated ASCII wave backgrounds",
-    "https://www.npmjs.com/package/ascii-waves",
-  ],
-  ["Walksafe", "notifies volunteers when students request a campus walk"],
-  [
-    "Spotify Playlist Manager",
-    "organizing and managing playlists",
-    "https://github.com/seun-ipaye/SpotifyManager",
-  ],
+  {
+    name: "RunNow",
+    text: "finds running loops in Toronto with the fewest red lights",
+    href: "https://run-now-production.up.railway.app",
+    github: "https://github.com/seun-ipaye/run-now",
+    stack: "Python, FastAPI, SQL Server, NetworkX",
+  },
+  {
+    name: "Sons of Caesar",
+    text: "website for my events group",
+    href: "https://sonsofcaesar.xyz",
+    github: "https://github.com/seun-ipaye/sonsofcaesar",
+    stack: "React, TypeScript, FastAPI, PostgreSQL",
+  },
+  {
+    name: "Frogg",
+    text: "Discord bot that posts Canadian internships every 6 hours",
+    href: "https://top.gg/bot/1538298422807765002",
+    github: "https://github.com/seun-ipaye/frogg",
+    stack: "Python",
+  },
+  {
+    name: "OAMax",
+    text: "Chrome extension for randomized LeetCode practice and timed OA simulation",
+    href: "https://chromewebstore.google.com/detail/oamax/ihegbmjjphimjplnekfadnphldihopnd",
+    github: "https://github.com/seun-ipaye/OAMax",
+    stack: "TypeScript",
+  },
+  {
+    name: "ascii-waves",
+    text: "npm library for animated ASCII wave backgrounds",
+    href: "https://www.npmjs.com/package/ascii-waves",
+    github: "https://github.com/seun-ipaye/ascii-waves",
+    stack: "TypeScript, React",
+  },
+  { name: "Walksafe", text: "notifies volunteers when students request a campus walk" },
+  {
+    name: "Spotify Playlist Manager",
+    text: "organizing and managing playlists",
+    href: "https://sptfymngr.site/",
+    github: "https://github.com/seun-ipaye/SpotifyManager",
+    stack: "JavaScript",
+  },
 ];
 
 const hobbies = [
@@ -197,6 +214,44 @@ function Experience() {
   );
 }
 
+function Projects({ items }) {
+  const link = (href, label, cls) => (
+    <a className={cls} href={href} target="_blank" rel="noopener noreferrer">
+      {label}
+    </a>
+  );
+  return (
+    <ul className="pf-rows">
+      {items.map((p) => (
+        <li key={p.name} className="pf-project">
+          <div className="pf-project-left">
+            <span className="pf-row-main">
+              {p.href ? link(p.href, p.name, "pf-company") : p.name}
+            </span>
+            {p.github && (
+              <a
+                className="pf-gh"
+                href={p.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${p.name} on GitHub`}
+              >
+                <svg viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                </svg>
+              </a>
+            )}
+          </div>
+          <div className="pf-project-right">
+            <span className="pf-dim">{p.text}</span>
+            {p.stack && <span className="pf-dim pf-small">{p.stack}</span>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Pairs({ items, underlined }) {
   return (
     <ul className={underlined ? "pf-rows pf-underlined" : "pf-rows"}>
@@ -288,7 +343,7 @@ export default function Portfolio({ calm, onToggleCalm, music }) {
       <section className="pf-content" key={tab}>
         {tab === "about" && <About />}
         {tab === "experience" && <Experience />}
-        {tab === "projects" && <Pairs items={projects} underlined />}
+        {tab === "projects" && <Projects items={projects} />}
         {tab === "hobbies" && <Pairs items={hobbies} />}
       </section>
 

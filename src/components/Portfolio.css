@@ -262,6 +262,55 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
   font-size: 0.8rem;
 }
 
+.pf-rows li.pf-project {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0 2rem;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.pf-gh {
+  display: inline-flex;
+  color: #7a7a7a;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.pf-gh:hover {
+  color: #fff;
+}
+
+.pf-project-left,
+.pf-project-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.pf-project-left {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pf-project-right {
+  gap: 0.1rem;
+  line-height: 1.35;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.pf-small {
+  font-size: 0.62rem;
+}
+
+.pf-project-left .pf-row-main {
+  white-space: nowrap;
+}
+
 .pf-date {
   flex-shrink: 0;
   white-space: nowrap;
@@ -372,6 +421,17 @@ a.pf-row-link:not(.pf-row-page):hover .pf-row-main,
   .pf-rows li {
     padding: 0.6rem 0;
     font-size: 0.85rem;
+  }
+
+  .pf-rows li.pf-project {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .pf-project-right {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .pf-section-gap {
