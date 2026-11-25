@@ -139,6 +139,16 @@
     "w": 441,
     "h": 640
   },
+  "/media/manga/climb-view.jpg": {
+    "thumb": "/media/manga/thumbs/climb-view.jpg",
+    "w": 640,
+    "h": 459
+  },
+  "/media/manga/night-view.jpg": {
+    "thumb": "/media/manga/thumbs/night-view.jpg",
+    "w": 640,
+    "h": 459
+  },
   "/media/experience/bscs/career-event.jpg": {
     "thumb": "/media/experience/bscs/thumbs/career-event.jpg",
     "w": 1000,
