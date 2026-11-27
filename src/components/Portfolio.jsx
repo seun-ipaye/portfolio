@@ -60,13 +60,6 @@ const projects = [
     stack: "Python, FastAPI, SQL Server, NetworkX",
   },
   {
-    name: "Sons of Caesar",
-    text: "website for my events group",
-    href: "https://sonsofcaesar.xyz",
-    github: "https://github.com/seun-ipaye/sonsofcaesar",
-    stack: "React, TypeScript, FastAPI, PostgreSQL",
-  },
-  {
     name: "Frogg",
     text: "Discord bot that posts Canadian internships every 6 hours",
     href: "https://top.gg/bot/1538298422807765002",
